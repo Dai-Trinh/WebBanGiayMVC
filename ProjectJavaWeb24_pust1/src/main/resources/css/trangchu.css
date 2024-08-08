@@ -1,0 +1,587 @@
+* {
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+
+.clear {
+    clear: both;
+}
+
+#baongoaiheader {
+    
+    height: 100px;
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#header {
+    width: 100%;
+    height: 100px;
+    padding-top: 30px;
+    position: fixed;
+    padding-left: 30px;
+    margin-top: 0px;
+    background-color: white;
+    top: 0;
+}
+
+
+
+.menusanpham{
+    position: relative;
+}
+
+
+.menucon1{
+    position: absolute;
+    display: none;
+    height: 200px;
+    width: 150px;
+    left: 0px;
+    background-color: white;
+}
+
+.menucon1 li {
+    list-style: none;
+    padding:20px 10px;
+}
+
+.menucon1 > li:hover > a{
+    color: grey;
+}
+
+.menucon1 li a {
+    color: black;
+    text-decoration: none;
+    
+}
+
+#menu > ul > li:hover .menucon1 {
+    display: block;
+}
+
+
+.menuao:hover > .menucon2 {
+    display: block;
+}
+
+.menucap2{
+    position: absolute;
+    display: none;
+    
+    width: 150px;
+    left: 150px;
+    top: 0;
+    background-color: white;
+}
+
+.menucap2 > li:hover > a {
+    color: grey;
+}
+
+.menucap2 > li > a {
+    font-weight: 500;
+}
+
+.menucon1 ul
+{
+    position: absolute;
+    display: none;
+}
+
+.menuquan:hover > .menuquan2 {
+    display: block;
+}
+
+.menuquan2 {
+    top: 60px;
+    
+}
+
+.menudobo:hover > .menudobo2 {
+    display: block;
+}
+
+.menudobo2 {
+    top: 125px;
+    height: 120px !important;
+}
+
+.menuphukien {
+    position: relative;
+}
+
+.menuphukien:hover > .menuconphukien {
+    display: block;
+}
+
+.menuconphukien {
+    display: none;
+    width: 200px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+}
+
+
+.menuconphukien li {
+    list-style-type: none;
+    padding: 20px 10px;
+}
+
+.menuconphukien li:hover a {
+    color: grey;
+}
+
+.menubosuutap {
+    position: relative;
+}
+
+.menubosuutap:hover .menuconbosuutap {
+    display: block;
+}
+
+.menuconphukien li a {
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+
+.menuconbosuutap {
+    display: none;
+    width: 200px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+}
+
+
+.menuconbosuutap li {
+    list-style-type: none;
+    padding: 20px 10px;
+}
+
+.menuconbosuutap li:hover a {
+    color: grey;
+}
+
+.menuconbosuutap li a {
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+
+#logo {
+    float: left;
+    cursor: pointer;
+}
+
+
+
+#menu {
+    float: left;
+    margin-top: 30px;
+}
+
+#menu > ul > li{
+    list-style: none;
+    display: inline;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+
+#menu > ul > li > a {
+    color: black;
+    text-decoration: none;
+}
+
+
+#timkiem {
+    margin-top: 25px;
+    margin-left: 50px;
+    float: left;
+    width: 205px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+
+#timkiem input {
+    border: none;
+    height: 30px;
+    float: left;
+    margin-left: 15px;
+}
+
+#timkiem i {
+    float: left;
+    margin-top: 8px;
+
+}
+
+#yeuthich {
+    float: left;
+    margin-left: 50px;
+    margin-top: 30px;
+    
+}
+
+#yeuthich i {
+    
+    margin-right: 20px;
+}
+
+#body {
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 100px;
+    
+}
+
+.slide-show {
+    width: 100%;
+    overflow: hidden;
+    height: 680px;
+    margin: 0 auto;
+}
+
+.anhthuonghieu {
+    width: 4500;
+    height: 680;
+    -webkit-animation: slide 14s ease infinite;
+}
+
+.slide {
+    float: left;
+    width: 1450px;
+}
+
+.slide img {
+    width: 1450px;
+}
+
+
+.danhmucnoibat {
+    
+    margin-top: 50px;
+    
+    
+}
+
+.sanphamnoibat:hover {
+    cursor: pointer;
+}
+
+.danhmucnoibat .ten {
+    font-size: 25px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+
+}
+
+.danhsachsanphamnoibat {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+.noibat {
+    height: 600px;
+    position: relative;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.chuasanphamnoibat {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    animation: alternate;
+    
+}
+.sanphamnoibat {
+    margin-left: 32px;
+    float: left;
+    height: 600px;
+    
+}
+
+.sanphamnoibat img {
+    width: 330px;
+    height: 450px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.sanphamnoibat p {
+    font-size: 20px;
+}
+
+.chuasanphamnoibat:nth-child(2) {
+    transform: translateX(100%);
+}
+
+.chuasanphamnoibat:nth-child(3) {
+    transform: translateX(200%);
+}
+
+.button_chuyen_noibat {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+    left: 30px;
+    font-size: 40px;
+    color: gray;
+    top: 40%;
+}
+
+.ti-arrow-circle-left:hover {
+    color: aliceblue;
+}
+
+.ti-arrow-circle-right:hover {
+    color: aliceblue;
+}
+
+#danhsachsanpham {
+    width: 100%;
+    height: 700px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;    
+}
+
+
+.chuabonsanphamnoibat {
+    position: relative;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+#danhsachsanpham .tendm {
+    font-size: 25px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+.sanpham {
+    width: 330px;
+    height: 550px;
+    float: left;
+    margin-right: 32px;
+    margin-bottom: 70px;
+    cursor: pointer;
+}
+
+.dongsp {
+    width: 100%;
+    margin-left: 50px;
+    position: absolute;
+    display: flex;
+    animation: alternate;
+}
+
+.button_chuyen_noibat_san_pham {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+    margin-left: 50px;
+    font-size: 40px;
+    color: gray;
+    margin-top: 220px;
+}
+
+.dongsp:nth-child(2){
+    transform: translateX(100%);
+}
+
+.dongsp:nth-child(3){
+    transform: translateX(200%);
+}
+
+.dongsp:nth-child(4){
+    transform: translateX(300%);
+}
+
+
+.sanpham img {
+    width: 330px;
+    height: 450px;  
+    
+    object-fit: cover;
+}
+
+.sanpham p {
+    font-size: 17px;
+    margin-top: 8px;
+}
+.sanpham .gia {
+    font-weight: bold;
+}
+
+#cuahang {
+    width: 100%;
+    
+}
+
+.nen {
+    width: 100%;
+    height: 800px;
+    background-image: url('/image/cuahang.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.nen .ht {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    padding-top: 250px;
+    padding-bottom: 150px;
+}
+
+.nen .tim {
+    font-size: 17px;
+    color: white;
+    margin-left: 46%;
+    border-bottom: 2px solid white;
+    padding-bottom: 20px;
+    width: 85px;
+}
+
+#footer {
+    margin-left: 100px;
+    height: 200px;
+}
+
+#footer .right {
+    float: left;
+    margin-right: 80px;
+}
+
+#footer .right p {
+    font-weight: bold;
+}
+
+#footer .right ul {
+    margin-top: 20px;
+   
+    
+}
+
+#footer .right ul li {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+#footer .left {
+    float: right;
+    margin-right: 250px;
+} 
+
+#footer .left .theodoi {
+    font-weight: bold;
+}
+
+
+#footer .left .email {
+    margin-top: 20px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+#footer .left .email input {
+    border: none;
+    height: 30px;
+    padding-left: 10px;
+    width: 200px;
+}
+
+
+#footer .left .email button {
+    height: 30px;
+    background-color: black;
+    color: white;
+    width: 80px;
+}
+
+.ketnoi {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.icon {
+    margin-top: 5px;
+}
+
+.icon i {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+input {
+    outline: none;
+}
+
+.ti-shopping-cart {
+    position: relative;
+}
+
+.so-luong-san-pham {
+    position: absolute;
+    top: -18px;
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    line-height: 15px;
+    font-size: 15px;
+    left: 8px;
+}
+
+
+@-webkit-keyframes slide {
+    20% {margin-left: 0px;}
+    30% {margin-left: -1450px;}
+    50% {margin-left: -1450px;}
+    60% {margin-left: -2900px;}
+    80% {margin-left: -2900px;}
+  }
+
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+ @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+ @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  
+
+
+
+
