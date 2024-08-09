@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.ibm.icu.text.DecimalFormat;
 
@@ -37,9 +38,24 @@ public class HoaDon extends BaseEntity{
 			mappedBy = "hoaDon")
 	private Set<ChiTietHoaDon> chiTietHoaDons = new HashSet<ChiTietHoaDon>();
 	
+	@Column(name = "status")
+	private Integer status;
 	
+	@Column(name = "payment_method")
+	private Integer paymentMethod;
 	
+	@Transient
+	private String statusString;
 	
+
+	public Integer getPaymentMethod() {
+		return paymentMethod;
+	}
+
+	public void setPaymentMethod(Integer paymentMethod) {
+		this.paymentMethod = paymentMethod;
+	}
+
 	public Set<ChiTietHoaDon> getChiTietHoaDons() {
 		return chiTietHoaDons;
 	}
@@ -47,8 +63,6 @@ public class HoaDon extends BaseEntity{
 	public void setChiTietHoaDons(Set<ChiTietHoaDon> chiTietHoaDons) {
 		this.chiTietHoaDons = chiTietHoaDons;
 	}
-
-
 
 	public KhachHang getKhachHang() {
 		return khachHang;
@@ -78,8 +92,22 @@ public class HoaDon extends BaseEntity{
 		DecimalFormat df = new DecimalFormat("#,###");
 		return df.format(this.thanhTien);
 	}
-	
-	
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public String getStatusString() {
+		return statusString;
+	}
+
+	public void setStatusString(String statusString) {
+		this.statusString = statusString;
+	}
 	
 	
 }
