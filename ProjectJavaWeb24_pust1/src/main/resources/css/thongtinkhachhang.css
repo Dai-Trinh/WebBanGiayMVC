@@ -2,7 +2,9 @@
     padding: 0;
     margin: 0;
 }
-
+html, body {
+    font-family: 'Roboto', sans-serif;
+}
 #thong-tin-khach-hang {
     margin-top: 150px;
     padding-left: 200px;

@@ -76,18 +76,20 @@
     <div id="sanphamlienquan">
         <p>SẢN PHẨM LIÊN QUAN</p>
         <div class="danhsachsanphamlienquan">
-        
-        	<c:forEach begin="1" end="3" var="i">
-        		<div id="loaisanpham">
-        			<c:forEach items="${sanPhamLienQuan }" begin="${(4*i - 3) - 1 }" end="${4*i - 1}" var="splq">
-	        			<div class="sanpham">
-	                    <img src="${base }/image/${splq.hinhAnh}" alt="">
-	                    <p class="tensp">${splq.tenSanPham }</p>
-	                    <p class="gia">${splq.getEpGia() }</p>
-	                	</div>
-        			</c:forEach>
-        		</div>
-        	</c:forEach>
+
+            <c:set var="itemsPerRow" value="4" />
+
+            <c:forEach var="rowIndex" begin="0" end="${fn:length(sanPhamLienQuan) / itemsPerRow - 1}">
+                <div id="loaisanpham">
+                    <c:forEach items="${sanPhamLienQuan}" var="splq" begin="${rowIndex * itemsPerRow}" end="${rowIndex * itemsPerRow + itemsPerRow - 1}">
+                        <div class="sanpham">
+                            <img src="${base }/image/${splq.hinhAnh}" alt="">
+                            <p class="tensp">${splq.tenSanPham }</p>
+                            <p class="gia">${splq.getEpGia() }</p>
+                        </div>
+                    </c:forEach>
+                </div>
+            </c:forEach>
         
             <!-- <div id="loaisanpham">
                 <div class="sanpham">

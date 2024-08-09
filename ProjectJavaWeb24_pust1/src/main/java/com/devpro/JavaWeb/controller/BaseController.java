@@ -81,7 +81,7 @@ public abstract class BaseController {
 	@ModelAttribute("khachHang")
 	public KhachHang getKhachHang() {
 		KhachHang khachHang = new KhachHang();
-		if(isLogined()) {
+		if(isLogined() && getUserLogined().getIdKhachHang() != null) {
 			khachHang = khachHangService.getById(getUserLogined().getIdKhachHang());
 		}
 		return khachHang;

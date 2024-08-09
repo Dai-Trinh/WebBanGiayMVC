@@ -74,7 +74,7 @@
                         </ul>
                     </li>
                     <li><a href="/cua-hang">CỬA HÀNG</a></li>
-                    <li><a href="">3D SHOPPING</a></li>
+                    <li><a href="">LIÊN HỆ</a></li>
                 </ul>
             </div>
             <div id="timkiem">

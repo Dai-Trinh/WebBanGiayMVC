@@ -46,7 +46,7 @@
     
     <div class="clear"></div>
 
-    <div id="noidung">
+    <div id="noidung"  style="width: 90%; margin: 0 auto">
     	
     	<div id="loaisanpham">
 	            

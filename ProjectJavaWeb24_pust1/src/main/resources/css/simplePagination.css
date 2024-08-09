@@ -3,7 +3,9 @@
 * Author: Flavius Matis - http://flaviusmatis.github.com/
 * URL: https://github.com/flaviusmatis/simplePagination.js
 */
-
+html, body {
+	font-family: 'Roboto', sans-serif;
+}
 ul.simple-pagination {
 	list-style: none;
 }

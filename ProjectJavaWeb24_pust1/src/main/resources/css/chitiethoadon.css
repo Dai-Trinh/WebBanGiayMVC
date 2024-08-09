@@ -3,7 +3,9 @@
     margin: 0;
     
 }
-
+html, body {
+    font-family: 'Roboto', sans-serif;
+}
 #chi-tiet-hoa-don {
     margin-top: 100px;
     margin-left: 50px;

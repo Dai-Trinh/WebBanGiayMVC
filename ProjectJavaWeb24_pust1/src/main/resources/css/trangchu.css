@@ -21,13 +21,15 @@
 
 #header {
     width: 100%;
-    height: 100px;
-    padding-top: 30px;
+    height: 80px;
+    /*padding-top: 30px;*/
     position: fixed;
-    padding-left: 30px;
-    margin-top: 0px;
+    /*padding-left: 30px;*/
+    /*margin-top: 0px;*/
     background-color: white;
     top: 0;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -243,9 +245,10 @@
 
 #body {
     width: 100%;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-top: 100px;
+    /*margin-left: 20px;*/
+    /*margin-right: 20px;*/
+    padding-top: 80px;
+    font-family: 'Roboto', sans-serif;
     
 }
 
@@ -254,21 +257,25 @@
     overflow: hidden;
     height: 680px;
     margin: 0 auto;
+    position: relative;
 }
 
 .anhthuonghieu {
-    width: 4500;
-    height: 680;
+    display: flex;
+    width: 300%;
+    height: 680px;
     -webkit-animation: slide 14s ease infinite;
 }
 
 .slide {
     float: left;
-    width: 1450px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .slide img {
-    width: 1450px;
+    width: 100%;
+    object-fit: cover;
 }
 
 
@@ -286,8 +293,18 @@
 .danhmucnoibat .ten {
     font-size: 25px;
     margin-bottom: 30px;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
+    text-align: center;
+    font-weight: 700;
+}
 
+.danhmucnoibat .ten-nho {
+    font-size: 15px;
+    margin-bottom: 10px;
+    /*margin-left: 30px;*/
+    text-align: center;
+    font-weight: 600;
+    color: #8a8787;
 }
 
 .danhsachsanphamnoibat {
@@ -303,20 +320,22 @@
     width: 100%;
     transition: all 0.3s ease;
 }
-
+.wrapper-product-special{
+    width: 70%;
+}
 .chuasanphamnoibat {
     position: absolute;
     width: 100%;
     height: 600px;
     display: flex;
     animation: alternate;
-    
+    display: flex;
+    justify-content: center;
 }
 .sanphamnoibat {
-    margin-left: 32px;
     float: left;
     height: 600px;
-    
+    margin: 0 15px;
 }
 
 .sanphamnoibat img {
@@ -342,27 +361,29 @@
     position: absolute;
     display: flex;
     justify-content: space-between;
-    width: 96%;
-    left: 30px;
+    width: 90%;
+    left: 5%;
     font-size: 40px;
     color: gray;
     top: 40%;
 }
 
 .ti-arrow-circle-left:hover {
-    color: aliceblue;
+    color: black;
 }
 
 .ti-arrow-circle-right:hover {
-    color: aliceblue;
+    color: black;
 }
 
 #danhsachsanpham {
-    width: 100%;
+    width: 85%;
     height: 700px;
-    margin-bottom: 20px;
     position: relative;
-    overflow: hidden;    
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 
@@ -375,24 +396,27 @@
 #danhsachsanpham .tendm {
     font-size: 25px;
     margin-bottom: 20px;
-    margin-left: 50px;
+    /*margin-left: 50px;*/
+    text-align: left;
+    font-weight: 700;
 }
 
 .sanpham {
     width: 330px;
     height: 550px;
     float: left;
-    margin-right: 32px;
+    /*margin-right: 32px;*/
     margin-bottom: 70px;
     cursor: pointer;
 }
 
 .dongsp {
     width: 100%;
-    margin-left: 50px;
+    /*margin-left: 50px;*/
     position: absolute;
     display: flex;
     animation: alternate;
+    justify-content: space-between;
 }
 
 .button_chuyen_noibat_san_pham {
@@ -579,9 +603,32 @@ input {
     from {opacity: .4}
     to {opacity: 1}
   }
-  
-  
 
 
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background: #dde5a1;
+    padding: 20px;
+    position: relative;
+}
+
+.scrolling-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 20s linear infinite;
+}
+
+.scrolling-text span {
+    margin-right: 300px;
+}
+
+@keyframes scroll {
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
 
