@@ -19,15 +19,40 @@
         <div class="thongtinhoadon">
             <table>
                 <tr>
-                    <td>Mã HĐ: HĐ00${haoDon.id }</td>
-                    <td>Ngày mua: ${haoDon.createdDate }</td>
+                    <td>Mã HĐ: HĐ00${hoaDon.id }</td>
+                    <td>Ngày mua: ${hoaDon.createdDate }</td>
                 </tr>
                 <tr>
-                    <td>Họ tên khách hàng: ${haoDon.khachHang.hoTen }</td>
-                    <td>Số điện thoại: ${haoDon.khachHang.soDienThoai }</td>
+                    <td>Họ tên khách hàng: ${hoaDon.khachHang.hoTen }</td>
+                    <td>Số điện thoại: ${hoaDon.khachHang.soDienThoai }</td>
                 </tr>
                 <tr>
-                    <td colspan="2">Địa chỉ nhận: ${haoDon.khachHang.diaChi }</td>
+                    <td>Địa chỉ nhận hàng: ${hoaDon.khachHang.diaChi }</td>
+                    <td>Hình thức thanh toán: </td>
+                </tr>
+                <tr>
+                	<td colspan="2">Trạng thái: ${status }</td>
+                </tr>
+                <tr>
+                	<c:if test="${hoaDon.status == 1 || hoaDon.status == null }">
+	                	<td>
+	                		<input type="button" value="Duyệt đơn hàng" onclick="ChangeBillStatus('${hoaDon.id }', '2')"></input>
+	                	</td>
+                	</c:if>
+                	<c:if test="${hoaDon.status == 2 }">
+	                	<td>
+	                		<input type="button" value="Bắt đầu giao hàng" onclick="ChangeBillStatus('${hoaDon.id }', '3')"></input>
+	                	</td>
+                	</c:if>
+                	<c:if test="${hoaDon.status == 3 }">
+                		<td><input type="button" value="Giao hàng thành công" onclick="ChangeBillStatus('${hoaDon.id }', '5')"/></td>
+                		<td><input type="button" value="Giao hàng thất bại, chờ giao hàng lần 2" onclick="ChangeBillStatus('${hoaDon.id }', '4')"/></td>
+                	</c:if>
+                	<c:if test="${hoaDon.status == 4 }">
+                		<td><input type="button" value="Giao hàng thành công" onclick="ChangeBillStatus('${hoaDon.id }', '5')"/></td>
+                		<td><input type="button" value="Gia hàng thất bại" onclick="ChangeBillStatus('${hoaDon.id }', '-2')"/></td>
+                	</c:if>
+                	
                 </tr>
             </table>
         </div>
@@ -42,7 +67,7 @@
                     <th>Đơn giá</th>
                     <th>Thành tiền</th>
                 </tr>
-                <c:forEach items="${haoDon.chiTietHoaDons }" var="sp">
+                <c:forEach items="${hoaDon.chiTietHoaDons }" var="sp">
                 	<tr>
                     <td>${sp.sanPham.id }</td>
                     <td>${sp.sanPham.tenSanPham }</td>
@@ -56,7 +81,18 @@
                 
             </table>
         </div>
-        <div class="tongtien">Tổng tiền: ${haoDon.getThanhTienFM() } VNĐ</div>
+        <div class="tongtien">Tổng tiền: ${hoaDon.getThanhTienFM() } VNĐ</div>
     </div>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="${base}/js/jquery.simplePagination.js"></script>
+<script type="text/javascript">
+
+	function ChangeBillStatus(id, status) {
+		console.log("id: " + id + " status: " + status);
+		window.location = "/admin/bill/chang-status?idhd=" + id + "&status=" + status;
+	}
+</script>
+
 </html>

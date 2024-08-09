@@ -32,7 +32,7 @@
                 <th>Tên khách hàng</th>
                 <th>Số điện thoại</th>
                 <th>Ngày mua</th>
-                <th>Số lượng</th>
+                <th>Tổng số lượng</th>
                 <th>Thành tiền</th>
                 <th>Trạng thái</th>
                 <th></th>
@@ -45,7 +45,7 @@
                 <td>${hoaDon.createdDate }</td>
                 <td>${hoaDon.tongSoLuong }</td>
                 <td>${hoaDon.getThanhTienFM()}đ</td>
-                <td>Đang xử lý!</td>
+                <td>${hoaDon.statusString }</td>
                 <td>
                     <input type="button" onclick="ChiTietHoaDon('${hoaDon.id}')" value="Chi tiết">
                 </td>
