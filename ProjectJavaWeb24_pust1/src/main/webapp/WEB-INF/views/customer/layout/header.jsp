@@ -42,21 +42,21 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="menusanpham"><a href="">PHỤ KIỆN</a>
-                        <ul class="menucon1">
-                        	<c:forEach items="${danhMucPhuKien }" var="pk">
-                        		<c:if test="${pk.status == 1 }">
-                        			<li><a href="/danh-sach-phu-kien?tendmpk=${pk.tenDanhMuc }">${pk.tenDanhMuc }</a></li>
-                        		</c:if>
-                        	</c:forEach>
-                            <!-- <li><a href="/danh-sach-phu-kien?tendmpk=Giày">Giày</a></li>
-                            <li><a href="">Cặp da</a></li>
-                            <li><a href="">Ví nam</a></li>
-                            <li><a href="">Thắt lưng</a></li>
-                            <li><a href="">Cà vạt</a></li>
-                            <li><a href="">Vali</a></li> -->
-                        </ul>
-                    </li>
+<%--                    <li class="menusanpham"><a href="">PHỤ KIỆN</a>--%>
+<%--                        <ul class="menucon1">--%>
+<%--                        	<c:forEach items="${danhMucPhuKien }" var="pk">--%>
+<%--                        		<c:if test="${pk.status == 1 }">--%>
+<%--                        			<li><a href="/danh-sach-phu-kien?tendmpk=${pk.tenDanhMuc }">${pk.tenDanhMuc }</a></li>--%>
+<%--                        		</c:if>--%>
+<%--                        	</c:forEach>--%>
+<%--                            <!-- <li><a href="/danh-sach-phu-kien?tendmpk=Giày">Giày</a></li>--%>
+<%--                            <li><a href="">Cặp da</a></li>--%>
+<%--                            <li><a href="">Ví nam</a></li>--%>
+<%--                            <li><a href="">Thắt lưng</a></li>--%>
+<%--                            <li><a href="">Cà vạt</a></li>--%>
+<%--                            <li><a href="">Vali</a></li> -->--%>
+<%--                        </ul>--%>
+<%--                    </li>--%>
                     <li class="menusanpham"><a href="">BỘ SƯU TẬP</a>
                         <ul class="menucon1">
                             <li><a href="/bo-suu-tap-xuan-he-2022?tenbst=MAN IN OFFICITY">Xuân Hè 2022</a></li>

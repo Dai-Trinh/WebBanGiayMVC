@@ -41,17 +41,31 @@
     <div class="clear"></div>
     <div id="noidung"  style="width: 90%; margin: 0 auto">
     	
-        <div id="loaisanpham">
-            
-            	<c:forEach items="${sanPhams.data }" var="sp">
-            		<c:if test="${sp.status == 1 }">
-            			<div class="sanpham" onclick="ChiTietSanPham('${sp.id}')">
-                    <img src="${base }/image/${sp.hinhAnh}" alt="">
-                    <p class="tensp">${sp.tenSanPham }</p>
-                    <p class="gia">${sp.getEpGia() }đ</p>
-                	</div>
-            		</c:if>
-            	</c:forEach>
+        <div id="loaisanpham" class="wrapper-item2">
+
+            <c:set var="counter" value="0"/>
+            <c:forEach items="${sanPhams.data}" var="sp">
+                <c:if test="${sp.status == 1}">
+                    <c:if test="${counter % 4 == 0}">
+                        <div class="row">
+                    </c:if>
+
+                    <div class="sanpham" onclick="ChiTietSanPham('${sp.id}')">
+                        <img src="${base}/image/${sp.hinhAnh}" alt="">
+                        <p class="tensp">${sp.tenSanPham}</p>
+                        <p class="gia">${sp.getEpGia()}đ</p>
+                    </div>
+
+                    <c:if test="${counter % 4 == 3}">
+                        </div>
+                    </c:if>
+
+                    <c:set var="counter" value="${counter + 1}"/>
+                </c:if>
+            </c:forEach>
+            <c:if test="${counter % 4 != 0}">
+        </div>
+        </c:if>
                 
                 <%-- <div class="sanpham">
                     <img src="${base }/image/aosomi2.png" alt="">

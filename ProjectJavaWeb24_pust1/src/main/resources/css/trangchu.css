@@ -414,6 +414,8 @@
     float: left;
     margin-bottom: 70px;
     cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .dongsp {
@@ -688,3 +690,22 @@ input {
 }
 
 
+.countdown {
+    text-align: center;
+    margin-top: 50px;
+}
+.countdown-item {
+    display: inline-block;
+    margin: 0 10px;
+}
+.countdown-item span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
+}
+.countdown-item label {
+    display: block;
+    font-size: 1rem;
+    color: #d80d30;
+}

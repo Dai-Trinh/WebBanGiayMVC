@@ -259,7 +259,7 @@ body {
 }
 
 #tenloaiao {
-    margin-top: 100px;
+    /*margin-top: 100px;*/
     margin-left: 50px;
 }
 
@@ -316,8 +316,10 @@ body {
 #loaisanpham {
     width: 100%;
     margin-top: 50px;
+}
+.row{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 #loaisanpham .tenloai {
@@ -332,6 +334,8 @@ body {
     float: left;
     margin-bottom: 70px;
     cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
