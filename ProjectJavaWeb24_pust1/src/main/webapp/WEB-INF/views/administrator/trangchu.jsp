@@ -71,16 +71,17 @@
                                 <td>${sp.getEpGia() }</td>
                                 <td>
                                 	<c:if test="${sp.status == 1 }">
-                                		<i class="ti-check"></i>
+                                		Đang bán
                                 	</c:if>
-                                	<c:if test="${sp.status == 0 }">
-                                		<i class="ti-close"></i>
+                                	<c:if test="${sp.status == -1 }">
+                                		Ngừng bán
                                 	</c:if>
                                 </td>
                                 <td>
                                     <input type="button" name="" id="" value="Sửa" onclick="SuaSanPham('${sp.id}')">
                                     <input type="button" name="" id="" value="Xóa" onclick="XacNhanXoa(${sp.id})">
-                                    <input type="button" name="" id="" value="Chi tiết">
+                                    <!-- <input type="button" name="" id="" value="Chi tiết"> -->
+                                    <input type="button" name="" id="" value="Cập nhật trạng thái" onclick="CapNhatTrangThai('${sp.id}')"/>
                                 </td>
                             </tr>
                             </c:forEach>
@@ -205,6 +206,34 @@
 			}
 		});
 	}
+	
+	function  CapNhatTrangThai(id) {
+		var data = {
+				id: id,
+				tenSanPham: "",
+				soLuong: "",
+				size: "",
+				gia: "",
+				formDang: "",
+				thietKe: "",
+				
+		};
+		jQuery.ajax({
+			url: "/admin/update-status",
+			type: "post",
+			contentType: "application/json",
+			data: JSON.stringify(data),
+			dataType: "json",
+			success: function(jsonResult) {
+				alert(jsonResult.message);
+				window.location = "/admin/trang-chu";
+			},
+			error: function(jqXhr, textStatus, errorMessage) {
+				alert("error");
+			}
+		});
+	}
+	
 	
 	$(document).ready(function() {
 		$("#searchiiddanhmuc").val(${sanPhamSearch.danhMucId});

@@ -15,6 +15,12 @@
 <body>
 <jsp:include page="/WEB-INF/views/administrator/layout/menu.jsp"></jsp:include>
     <div id="chi-tiet-hoa-don">
+    	<c:if test="">
+    		<div style="float: right;">
+    			<input type="button" value="Bắt đầu giao hàng" onclick="ChangeBillStatus('${hoaDon.id }', '-1')"></input>
+    		</div>
+    	</c:if>
+    	<div style="clear: both;"></div>
         <h1>CHI TIẾT HÓA ĐƠN</h1>
         <div class="thongtinhoadon">
             <table>

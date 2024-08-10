@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="${base }/css/chitietsanpham.css">
     <link rel="stylesheet" href="${base }/css/header1.css">
     <link rel="stylesheet" href="${base }/css/footer1.css">
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
     <link rel="stylesheet" href="./icon/themify-icons/themify-icons.css">
     <title>Document</title>
 </head>

@@ -47,7 +47,7 @@ public class SanPhamService extends BaseService<SanPham>{
 	
 	public List<SanPham> searchProduct(SanPhamSearch searchModel) {
 		// khởi tạo câu lệnh
-		String sql = "SELECT * FROM san_pham sp WHERE 1=1";
+		String sql = "SELECT * FROM san_pham sp WHERE 1=1 and sp.status != 0";
 
 		if (searchModel != null) {
 			
@@ -74,10 +74,16 @@ public class SanPhamService extends BaseService<SanPham>{
 		return getEntitiesByNativeSQL(sql);
 	}
 	
-	public PagerData<SanPham> searchSanPham(SanPhamSearch sanPhamSearch){
+	public PagerData<SanPham> searchSanPham(SanPhamSearch sanPhamSearch, boolean isAdmin){
 		String dieuKien = "";
 		//String sql = "select * from( select *, row_number() over (order by id desc) as r from san_pham where 1 = 1" + dieuKien + ") as tam where r between "+ (so*6-5) +" and " + (so * 6);
 
+		if(isAdmin) {
+			dieuKien += " and status != 0";
+		} else {
+			dieuKien += " and status = 1";
+		}
+		
 		if (sanPhamSearch != null) {
 			
 			// tìm kiếm theo category
@@ -189,6 +195,18 @@ public class SanPhamService extends BaseService<SanPham>{
 		}
 		sanPhamXoa.setStatus(0);
 		return super.saveOrUpdate(sanPhamXoa);
+	}
+	
+	
+	@Transactional
+	public SanPham stopSellProduct(Integer id) {
+		SanPham sanPhamStopCell = super.getById(id);
+		if(sanPhamStopCell.getStatus() == -1) {
+			sanPhamStopCell.setStatus(1);
+		} else {
+			sanPhamStopCell.setStatus(-1);
+		}
+		return super.saveOrUpdate(sanPhamStopCell);
 	}
 	
 

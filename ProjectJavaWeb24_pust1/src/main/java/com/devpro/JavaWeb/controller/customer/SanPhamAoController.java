@@ -42,7 +42,7 @@ public class SanPhamAoController extends BaseController {
 		sanPhamSearch.setDanhMucId(danhMucSanPhamBac2.getId()+"");
 		sanPhamSearch.setSizeOfPage(12);
 		
-		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch));
+		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch, false));
 		return "customer/sanphamao";
 	}
 	
@@ -59,7 +59,7 @@ public class SanPhamAoController extends BaseController {
 			// TODO: handle exception
 		}
 		sanPhamSearch.setPage(soTrang);
-		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch));
+		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch, false));
 		return "customer/sanphamao";
 	}
 	

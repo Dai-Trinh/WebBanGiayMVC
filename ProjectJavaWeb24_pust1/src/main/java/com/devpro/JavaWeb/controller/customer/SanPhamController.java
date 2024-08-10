@@ -27,18 +27,17 @@ import com.devpro.JavaWeb.services.impl.SanPhamService;
 public class SanPhamController extends BaseController {
 
 	@Autowired
-	SanPhamService sanPhamService;
-	
-	
-	@Autowired
-	DanhMucBac2Service danhMucBac2Service;
+	private SanPhamService sanPhamService;
 	
 	@Autowired
-	DanhMucBac1Service danhMucBac1Service;
+	private DanhMucBac2Service danhMucBac2Service;
 	
-	SanPhamSearch sanPhamSearch = new SanPhamSearch();
+	@Autowired
+	private DanhMucBac1Service danhMucBac1Service;
 	
-	List<DanhMucSanPhamBac2> bac2s = new ArrayList<DanhMucSanPhamBac2>();
+	private SanPhamSearch sanPhamSearch = new SanPhamSearch();
+	
+	private List<DanhMucSanPhamBac2> bac2s = new ArrayList<DanhMucSanPhamBac2>();
 	
 	@RequestMapping(value = {"/san-pham"}, method = RequestMethod.GET)
 	public String sanPhamGet(final Model model,
@@ -61,7 +60,7 @@ public class SanPhamController extends BaseController {
 		bac2s = danhMucBac2Service.getEntitiesByNativeSQL("SELECT * FROM danh_muc_san_pham_bac2 where id_dm_b1 = " + danhMucSanPhamBac1.getId());
 		
 		model.addAttribute("danhmucb2", bac2s);
-		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch));
+		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch, false));
 		return "customer/sanpham";
 	}
 	
@@ -73,7 +72,7 @@ public class SanPhamController extends BaseController {
 		
 		sanPhamSearch.setPage(Integer.parseInt(request.getParameter("sotrang")));
 		
-		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch));
+		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch, false));
 		
 		return "customer/sanpham";
 	}
