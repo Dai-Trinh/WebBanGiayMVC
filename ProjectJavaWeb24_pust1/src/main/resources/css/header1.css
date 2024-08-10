@@ -34,6 +34,7 @@ hr {
     top: 0;
     display: flex;
     justify-content: center;
+    z-index: 1000;
 }
 
 
@@ -46,15 +47,15 @@ hr {
 .menucon1{
     position: absolute;
     display: none;
-    height: 200px;
-    width: 150px;
-    left: 0px;
+    width: 200px;
+    left: -15px;
     background-color: white;
+    padding: 0 15px;
 }
 
 .menucon1 li {
     list-style: none;
-    padding:20px 10px;
+    padding:20px 0;
 }
 
 .menucon1 > li:hover > a{
@@ -64,7 +65,7 @@ hr {
 .menucon1 li a {
     color: black;
     text-decoration: none;
-    
+    font-weight: lighter;
 }
 
 #menu > ul > li:hover .menucon1 {
@@ -81,9 +82,10 @@ hr {
     display: none;
     
     width: 150px;
-    left: 150px;
+    left: 190px;
     top: 0;
     background-color: white;
+    padding: 0 15px;
 }
 
 .menucap2 > li:hover > a {
@@ -115,7 +117,6 @@ hr {
 
 .menudobo2 {
     top: 125px;
-    height: 120px !important;
 }
 
 .menuphukien {
@@ -188,7 +189,10 @@ hr {
     float: left;
     cursor: pointer;
 }
-
+#logo img{
+    width: 80px;
+    height: 80px;
+}
 
 
 #menu {
@@ -243,7 +247,7 @@ hr {
 }
 
 #yeuthich i {
-    
+    padding-bottom: 10px;
     margin-right: 20px;
 }
 

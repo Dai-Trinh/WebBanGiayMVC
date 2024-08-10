@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,9 @@
     <link rel="stylesheet" href="${base }/css/header1.css">
     <link rel="stylesheet" href="${base }/css/footer1.css">
     <link rel="stylesheet" href="./icon/themify-icons/themify-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css" integrity="sha512-B46MVOJpI6RBsdcU307elYeStF2JKT87SsHZfRSkjVi4/iZ3912zXi45X5/CBr/GbCyLx6M1GQtTKYRd52Jxgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 <body>
@@ -28,7 +32,7 @@
                 <p class="gia">${sanPham.getEpGia()}đ</p>
                 <p class="mau">Màu: ${sanPham.mauSac }</p>
                 <p class="size">Chọn size
-                    <ul class="si">
+                    <ul class="si" style="margin-top: 0; padding: 0;">
                     	<c:forEach items="${size }" var="s">
                     		<li class="loaisize" id="${s }" onclick="gachChan('${s }')"><c:out value="${s }"></c:out></li>
                     	</c:forEach>
@@ -37,10 +41,10 @@
               
                 <div class="soluong">Số lượng
                     <div>
-                        <ul class="sl">
+                        <ul class="sl" style="margin-top: 0; padding: 0;">
                             <li class="tang" id="giam" onclick="Giam()">-</li>
                             <li id="soluong">1</li>
-                            <li class="tang" id="giam" onclick="Tang()">+</li>
+                            <li class="tang" id="tang" onclick="Tang()">+</li>
                         </ul>
                     </div>
                 </div>
@@ -70,6 +74,88 @@
             <p>- 23% Spandex tạo độ co giãn tốt, thoải mái tối đa khi mặc.</p> -->
             <p class="nd"><strong>Màu sắc: </strong>${sanPham.mauSac }</p>
             <p class="nd"><strong>Size: </strong>${sanPham.size }</p>
+        </div>
+        <div class="duoi">
+            <p class="thongtin">Bình Luận</p>
+            <hr>
+            <div class="row d-flex justify-content-center mt-100 mb-100">
+                <div class="col-lg-12" style="margin-bottom: 15px;">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Bình luận mới nhất</h4>
+                        </div>
+                        <div class="comment-widgets">
+                            <!-- Comment Row -->
+                            <div class="d-flex flex-row comment-row m-t-0" style="margin-bottom: 20px;">
+                                <div class="p-2"><img src="https://i.imgur.com/Ur43esv.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                <div class="comment-text w-100">
+                                    <div class="d-flex" style="justify-content: space-between">
+                                        <h6 class="font-medium">James Thomas<span>(5☆)</span></h6>
+                                        <div class="comment-footer"> <span class="text-muted float-right">April 14, 2019</span></div>
+                                    </div>
+                                    <span class="m-b-15 d-block">This is awesome website. I would love to comeback again. </span>
+                                </div>
+                            </div> <!-- Comment Row -->
+                            <div class="d-flex flex-row comment-row" style="margin-bottom: 20px;">
+                                <div class="p-2"><img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                <div class="comment-text active w-100">
+                                    <div class="d-flex" style="justify-content: space-between">
+                                        <h6 class="font-medium">James Thomas<span>(5☆)</span></h6>
+                                        <div class="comment-footer"> <span class="text-muted float-right">April 14, 2019</span></div>
+                                    </div>
+                                    <span class="m-b-15 d-block">This is awesome website. I would love to comeback again. </span>
+                                </div>
+                            </div> <!-- Comment Row -->
+                            <div class="d-flex flex-row comment-row" style="margin-bottom: 20px;">
+                                <div class="p-2"><img src="https://i.imgur.com/J6l19aF.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                <div class="comment-text w-100">
+                                    <div class="d-flex" style="justify-content: space-between">
+                                        <h6 class="font-medium">James Thomas<span>(5☆)</span></h6>
+                                        <div class="comment-footer"> <span class="text-muted float-right">April 14, 2019</span></div>
+                                    </div>
+                                    <span class="m-b-15 d-block">This is awesome website. I would love to comeback again. </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="https://i.imgur.com/xELPaag.jpg" width="70" class="rounded-circle mt-2">
+                    </div>
+                    <div class="col-10">
+                        <div class="comment-box ml-2">
+                            <h4>Thêm bình luận</h4>
+                            <div class="rating">
+                                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                            </div>
+                            <div class="comment-area">
+                                <textarea class="form-control" placeholder="Bạn nghĩ sản phẩm thế nào?" rows="4"></textarea>
+                            </div>
+                            <div class="comment-btns mt-2">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="pull-left">
+                                            <button class="btn btn-danger btn-sm">Hủy</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="pull-right">
+                                            <button class="btn btn-success send btn-sm" style="float: right; width: 170px;">Gửi<i class="fa fa-long-arrow-right ml-1" style="margin-left: 10px;"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

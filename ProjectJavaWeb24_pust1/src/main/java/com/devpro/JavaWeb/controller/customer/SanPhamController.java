@@ -57,9 +57,11 @@ public class SanPhamController extends BaseController {
 		sanPhamSearch.setPage(1);
 		sanPhamSearch.setSizeOfPage(24);
 		sanPhamSearch.setStatus(1+"");
-		
-		bac2s = danhMucBac2Service.getEntitiesByNativeSQL("SELECT * FROM danh_muc_san_pham_bac2 where id_dm_b1 = " + danhMucSanPhamBac1.getId());
-		
+
+		if(danhMucSanPhamBac1 != null && danhMucSanPhamBac1.getId()!=null){
+			bac2s = danhMucBac2Service.getEntitiesByNativeSQL("SELECT * FROM danh_muc_san_pham_bac2 where id_dm_b1 = " + danhMucSanPhamBac1.getId());
+		}
+
 		model.addAttribute("danhmucb2", bac2s);
 		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch));
 		return "customer/sanpham";

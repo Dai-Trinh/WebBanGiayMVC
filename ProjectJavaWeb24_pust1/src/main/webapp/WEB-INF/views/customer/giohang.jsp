@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,20 +17,19 @@
 <body>
     <header>
         <div class="logo" onclick="TroVeTrangChu()">
-            <img src="${base }/image/logo_arisitino.png" alt="">
-        </div>
-        <div class="tieude">
-            <p>Giỏ Hàng</p>
+            <img src="${base }/image/logoOff.png" alt="">
         </div>
     </header>
-
     <div id="body-content">
+        <div class="tieude">
+            <p style="text-align: center; font-size: 30px; font-weight: bold;">Giỏ Hàng</p>
+        </div>
         <div class="giohang">
             <div class="giohang-left">
                 <h2>Giỏ hàng của bạn (${cart.totalProducts })</h2>
-                
+
                 <c:forEach items="${cart.cartItems }" var="ci">
-                
+
                 	<div class="dongsanpham">
                     <div class="anhsanpham">
                         <img src="${base }/image/${ci.hinhAnh}" alt="">
@@ -58,11 +57,11 @@
                     <div class="clear"></div>
                 </div>
                 <div class="clear"></div>
-            
+
                 </c:forEach>
-                
+
                 </div>
-            
+
             <div class="giohang-right">
                 <div class="tamtinh">
                     <p class="tam">Tạm tính:</p>
@@ -81,9 +80,9 @@
         </div>
     </div>
     <div class="clear"></div>
-	
+
 	<jsp:include page="/WEB-INF/views/customer/layout/footer.jsp"></jsp:include>
-    
+
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -93,14 +92,14 @@
 	function TroVeTrangChu() {
 		window.location = '/trang-chu';
 	}
-	
+
 	function  DatHang(tong) {
 		if(tong > 0){
 			window.location = "/thanh-toan";
 		} else {
 			alert("Bạn cần phải thêm ít nhất 1 sản phẩm vào giỏ hàng");
 		}
-		
+
 	}
 </script>
 

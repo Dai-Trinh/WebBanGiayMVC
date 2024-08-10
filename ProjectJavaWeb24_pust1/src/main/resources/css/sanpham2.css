@@ -28,6 +28,7 @@
     top: 0;
     display: flex;
     justify-content: center;
+    z-index: 1000;
 }
 
 
@@ -40,15 +41,15 @@
 .menucon1{
     position: absolute;
     display: none;
-    height: 200px;
     width: 150px;
-    left: 0px;
+    left: -15px;
     background-color: white;
+    padding: 0 15px;
 }
 
 .menucon1 li {
     list-style: none;
-    padding:20px 10px;
+    padding:20px 0;
 }
 
 .menucon1 > li:hover > a{
@@ -58,7 +59,7 @@
 .menucon1 li a {
     color: black;
     text-decoration: none;
-    
+    font-weight: lighter;
 }
 
 #menu > ul > li:hover .menucon1 {
@@ -74,9 +75,10 @@
     position: absolute;
     display: none;
     width: 150px;
-    left: 150px;
+    left: 190px;
     top: 0;
     background-color: white;
+    padding: 0 15px;
 }
 
 .menucap2 > li:hover > a {
@@ -108,7 +110,6 @@
 
 .menudobo2 {
     top: 125px;
-    height: 120px !important;
 }
 
 .menuphukien {
@@ -181,7 +182,10 @@
     float: left;
     cursor: pointer;
 }
-
+#logo img{
+    width: 80px;
+    height: 80px;
+}
 
 
 #menu {
@@ -236,7 +240,7 @@
 }
 
 #yeuthich i {
-    
+    padding-bottom: 10px;
     margin-right: 20px;
 }
 
@@ -312,7 +316,8 @@ body {
 #loaisanpham {
     width: 100%;
     margin-top: 50px;
-    margin-left: 50px;
+    display: flex;
+    justify-content: space-around;
 }
 
 #loaisanpham .tenloai {
@@ -325,7 +330,6 @@ body {
     width: 330px;
     height: 500px;
     float: left;
-    margin-right: 32px;
     margin-bottom: 70px;
     cursor: pointer;
 }

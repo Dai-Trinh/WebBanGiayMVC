@@ -28,9 +28,10 @@
 <div id="body">
     <div class="slide-show">
         <div class="anhthuonghieu">
-            <div class="slide"><img src="./image/bo_suu_tap_ao_dai.png" alt=""></div>
-            <div class="slide"><img src="./image/arisitino_online.png" alt=""></div>
-            <div class="slide"><img src="./image/lavish.png" alt=""></div>
+            <div class="slide"><img src="./image/banner11.png" alt=""></div>
+            <div class="slide"><img src="./image/banner9.jpg" alt=""></div>
+            <div class="slide"><img src="./image/banner1.jpg" alt=""></div>
+            <div class="slide"><img src="./image/banner8.png" alt=""></div>
         </div>
     </div>
 
@@ -226,12 +227,16 @@
         <i class="ti-arrow-circle-right btn_noi_bat_phai_san_pham"></i>
     </div>
 </div>
+<div id="cuahang">
+    <div class="nen-comment">
+        <p class="ht">KHÁCH HÀNG NÓI GÌ</p>
 
+    </div>
+</div>
 <div id="cuahang">
     <div class="nen">
-
         <p class="ht">HỆ THỐNG CỬA HÀNG</p>
-        <P class="tim" onclick="CuaHang()">TÌM NGAY</P>
+        <p class="tim" onclick="CuaHang()"><span>TÌM NGAY</span></p>
 
     </div>
 </div>

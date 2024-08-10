@@ -86,7 +86,8 @@ body {
 #loaisanpham {
     width: 100%;
     margin-top: 100px;
-    margin-left: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 #loaisanpham .tenloai {
@@ -99,7 +100,6 @@ body {
     width: 330px;
     height: 500px;
     float: left;
-    margin-right: 32px;
     margin-bottom: 70px;
     cursor: pointer;
 }
