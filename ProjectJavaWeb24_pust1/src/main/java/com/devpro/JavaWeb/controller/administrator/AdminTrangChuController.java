@@ -1,9 +1,7 @@
 package com.devpro.JavaWeb.controller.administrator;
 
 import java.io.IOException;
-import java.lang.annotation.Retention;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -73,7 +71,7 @@ public class AdminTrangChuController extends BaseController{
 //		List<SanPham> sanPhams = sanPhamService.searchProductPhanTrang(sanPhamSearch, 1); //sanPhamService.getEntitiesByNativeSQL("select * from( select *, row_number() over (order by id desc) as r from san_Pham) as tam where r between 1 and 6");
 //		model.addAttribute("sanPhams", sanPhams);
 //		model.addAttribute("sanPhamSearch",sanPhamSearch);
-		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch));
+		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch, true));
 		index = so*6 - 6;
 		model.addAttribute("sanPhamSearch",sanPhamSearch);
 		model.addAttribute("index", index);
@@ -91,7 +89,7 @@ public class AdminTrangChuController extends BaseController{
 //		model.addAttribute("sotrang", soTrang);
 		model.addAttribute("index", index);
 //		List<SanPham> sanPhams = sanPhamService.searchProductPhanTrang(sanPhamSearch, so); //sanPhamService.getEntitiesByNativeSQL("select * from( select *, row_number() over (order by id desc) as r from san_Pham) as tam where r between "+ (so*6-5) +" and " + (so * 6));
-		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch));
+		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch, true));
 		//model.addAttribute("sanPhamSearch",sanPhamSearch);
 		model.addAttribute("sanPhamSearch",sanPhamSearch);
 		return "administrator/trangchu";
@@ -133,7 +131,7 @@ public class AdminTrangChuController extends BaseController{
 		if(request.getParameter("nutchon").equals("Hủy")) {
 			return "redirect:/admin/trang-chu";
 		}
-		
+	
 		if(sanPham.getId() == null || sanPham.getId() <= 0) {
 			sanPhamService.themSanPham(sanPham, anhSanPham);
 		} else {
@@ -176,6 +174,19 @@ public class AdminTrangChuController extends BaseController{
 //		
 //		return ResponseEntity.ok(danhMucSanPhamBac1);
 //	}
+	
+	@RequestMapping(value = "/admin/update-status", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Map<String, Object>> updateProductStatus(
+			final Model model,
+			final HttpServletRequest request,
+			final HttpServletResponse response,
+			final @RequestBody SanPham sanPham
+	){
+		sanPhamService.stopSellProduct(sanPham.getId());
+		Map<String, Object> jsonResult = new HashMap<String, Object>();
+		jsonResult.put("message", "Cập nhật thành công!");
+		return ResponseEntity.ok(jsonResult);
+	}
 	
 	
 	@RequestMapping(value = {"/admin/xoa-san-pham"}, method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
