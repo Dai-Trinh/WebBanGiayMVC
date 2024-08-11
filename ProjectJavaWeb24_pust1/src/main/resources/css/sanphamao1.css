@@ -53,7 +53,7 @@ html, body {
 
 #loaisanpham {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 120px;
 }
 .row{
     display: flex;
@@ -104,4 +104,10 @@ html, body {
 }
 
 
-
+.filter-container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

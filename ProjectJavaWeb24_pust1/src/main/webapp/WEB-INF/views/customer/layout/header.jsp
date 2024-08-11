@@ -8,7 +8,7 @@
             </div>
             <div id="menu">
                 <ul>
-                    <li><a href="" >THƯƠNG HIỆU</a></li>
+                    <li><a href="${base }/trang-chu">TRANG CHỦ</a></li>
                     <li class="menusanpham"><a href="/san-pham" target="_parent">SẢN PHẨM</a>
                         <ul class="menucon1">
                             <li class="menuao">

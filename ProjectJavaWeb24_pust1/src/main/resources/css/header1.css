@@ -51,6 +51,7 @@ hr {
     left: -15px;
     background-color: white;
     padding: 0 15px;
+    top: 20px;
 }
 
 .menucon1 li {
@@ -82,7 +83,7 @@ hr {
     display: none;
     
     width: 150px;
-    left: 190px;
+    left: 195px;
     top: 0;
     background-color: white;
     padding: 0 15px;
@@ -275,7 +276,7 @@ hr {
 }
 
 .ti-user .dang-nhap {
-	width: 100px;
+	width: 150px;
 	position: absolute;
 	left: -30px;
 	background: white;

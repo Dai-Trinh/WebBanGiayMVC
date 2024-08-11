@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="${base}/css/header1.css">
     <link rel="stylesheet" href="${base }/icon/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="${base}/css/simplePagination.css">
-    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sản phẩm</title>
 </head>
 <body>
 
 	<div id="tenloaiao">
-        <p>ÁO</p>
         <form action="${base }/san-pham" method="get">\
-        	<input type="text" name="tenloai" value="${tenDM1 }" style="display: none;">
+        	<input type="text" name="tenloai" value="${tenDM1 }" style="display: block;">
         	<c:forEach items="${danhmucb2 }" var="dm">
 	        <div class="loaiao">
 	        	
@@ -27,23 +27,13 @@
 	        </div>
         </c:forEach>
         </form>
-        <div class="sapxep">
-            <p>Sắp xếp</p>
-            <i class="ti-list"></i>
-            <div class="clear"></div>
-        </div>
+<%--        <div class="sapxep">--%>
+<%--            <p>Sắp xếp</p>--%>
+<%--            <i class="ti-list"></i>--%>
+<%--            <div class="clear"></div>--%>
+<%--        </div>--%>
     </div>
-    
-    <!-- <div class="loaiao">
-            <p>Áo Sơ mi</p>
-        </div>
-        <div class="loaiao">
-            <p>Áo Po-lo</p>
-        </div>
-        <div class="loaiao">
-            <p>Áo T-Shirt</p>
-        </div> -->
-    
+
     <div class="clear"></div>
 
     <div id="noidung"  style="width: 90%; margin: 0 auto">
@@ -193,8 +183,10 @@
    
     <jsp:include page="/WEB-INF/views/customer/layout/footer.jsp"></jsp:include>
     <jsp:include page="/WEB-INF/views/customer/layout/header.jsp"></jsp:include>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    
     
 </body>
 </html>

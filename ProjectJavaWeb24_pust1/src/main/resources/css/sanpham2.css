@@ -45,6 +45,7 @@
     left: -15px;
     background-color: white;
     padding: 0 15px;
+    top: 25px;
 }
 
 .menucon1 li {
@@ -75,7 +76,7 @@
     position: absolute;
     display: none;
     width: 150px;
-    left: 190px;
+    left: 175px;
     top: 0;
     background-color: white;
     padding: 0 15px;

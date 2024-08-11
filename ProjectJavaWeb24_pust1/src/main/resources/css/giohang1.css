@@ -48,7 +48,8 @@ header .tieude {
 
 .giohang {
     margin-top: 100px;
-    margin-left: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 .giohang h2 {

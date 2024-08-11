@@ -14,13 +14,15 @@
     <link rel="stylesheet" href="${base }/css/footer1.css">
     <link rel="stylesheet" href="${base }/icon/themify-icons/themify-icons.css">
     <link type="text/css" rel="stylesheet" href="${base}/css/simplePagination.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css" integrity="sha512-B46MVOJpI6RBsdcU307elYeStF2JKT87SsHZfRSkjVi4/iZ3912zXi45X5/CBr/GbCyLx6M1GQtTKYRd52Jxgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>Sản phẩm áo</title>
 </head>
 <body>
 
 	<div id="tenloaiao">
-        <p>${danhMucSanPhamBac.tenDanhMuc}</p>
-     </div>
+    </div>
     <!-- <div id="tenloaiao">
         <p>ÁO</p>
         <div class="loaiao">
@@ -40,8 +42,33 @@
     </div> -->
     <div class="clear"></div>
     <div id="noidung"  style="width: 90%; margin: 0 auto">
-    	
         <div id="loaisanpham" class="wrapper-item2">
+            <p style="text-align: center;margin: 20px;font-size: 30px;"><i class="fa-solid fa-person-running" style="margin-right: 10px;"></i>${danhMucSanPhamBac.tenDanhMuc}</p>
+
+            <div class="container mt-4" style="margin-bottom: 20px;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="filter-container">
+                            <h4 class="mb-4">Bộ lọc sản phẩm</h4>
+
+                            <div class="form-group">
+                                <label for="search-name">Tìm kiếm theo tên:</label>
+                                <input type="text" id="search-name" class="form-control" placeholder="Nhập tên sản phẩm">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="price-min">Khoảng giá:</label>
+                                <div class="d-flex">
+                                    <input type="number" id="price-min" class="form-control mr-2" placeholder="Từ (đồng)" min="0" max="100000000">
+                                    <input type="number" id="price-max" class="form-control" placeholder="Đến (đồng)" min="0" max="100000000">
+                                </div>
+                            </div>
+
+                            <button id="search-button" class="btn btn-primary">Tìm kiếm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <c:set var="counter" value="0"/>
             <c:forEach items="${sanPhams.data}" var="sp">
@@ -176,6 +203,9 @@
     <jsp:include page="/WEB-INF/views/customer/layout/header.jsp"></jsp:include>
 </body>
 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="${base}/js/jquery.simplePagination.js"></script>

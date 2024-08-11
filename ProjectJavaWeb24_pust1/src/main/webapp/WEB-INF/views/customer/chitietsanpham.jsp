@@ -88,7 +88,7 @@
                         <div class="comment-widgets">
                         	<c:forEach items="${binhLuans }" var="binhLuan">
                         		<div class="d-flex flex-row comment-row m-t-0" style="margin-bottom: 20px;">
-                                <div class="p-2"><img src="https://i.imgur.com/Ur43esv.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                <div class="p-2"><img src="./image/anhDaiDienMacDinh.jpg" alt="user" width="50" class="rounded-circle"></div>
                                 <div class="comment-text w-100">
                                     <div class="d-flex" style="justify-content: space-between">
                                         <h6 class="font-medium">${binhLuan.userName }<span>(${binhLuan.rating }☆)</span></h6>
@@ -129,7 +129,7 @@
             		<div class="card">
                 <div class="row">
                     <div class="col-2">
-                        <img src="https://i.imgur.com/xELPaag.jpg" width="70" class="rounded-circle mt-2">
+                        <img src="./image/anhDaiDienMacDinh.jpg" width="70" class="rounded-circle mt-2">
                     </div>
                     <div class="col-10">
                         <div class="comment-box ml-2">
