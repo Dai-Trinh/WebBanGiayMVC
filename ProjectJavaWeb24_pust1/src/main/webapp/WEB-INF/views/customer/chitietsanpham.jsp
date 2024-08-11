@@ -86,18 +86,21 @@
                             <h4 class="card-title">Bình luận mới nhất</h4>
                         </div>
                         <div class="comment-widgets">
-                            <!-- Comment Row -->
-                            <div class="d-flex flex-row comment-row m-t-0" style="margin-bottom: 20px;">
+                        	<c:forEach items="${binhLuans }" var="binhLuan">
+                        		<div class="d-flex flex-row comment-row m-t-0" style="margin-bottom: 20px;">
                                 <div class="p-2"><img src="https://i.imgur.com/Ur43esv.jpg" alt="user" width="50" class="rounded-circle"></div>
                                 <div class="comment-text w-100">
                                     <div class="d-flex" style="justify-content: space-between">
-                                        <h6 class="font-medium">James Thomas<span>(5☆)</span></h6>
-                                        <div class="comment-footer"> <span class="text-muted float-right">April 14, 2019</span></div>
+                                        <h6 class="font-medium">${binhLuan.userName }<span>(${binhLuan.rating }☆)</span></h6>
+                                        <div class="comment-footer"> <span class="text-muted float-right">${binhLuan.createdAt }</span></div>
                                     </div>
-                                    <span class="m-b-15 d-block">This is awesome website. I would love to comeback again. </span>
+                                    <span class="m-b-15 d-block">${binhLuan.content } </span>
                                 </div>
                             </div> <!-- Comment Row -->
-                            <div class="d-flex flex-row comment-row" style="margin-bottom: 20px;">
+                        	</c:forEach>
+                            <!-- Comment Row -->
+                            
+                            <!-- <div class="d-flex flex-row comment-row" style="margin-bottom: 20px;">
                                 <div class="p-2"><img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" width="50" class="rounded-circle"></div>
                                 <div class="comment-text active w-100">
                                     <div class="d-flex" style="justify-content: space-between">
@@ -106,7 +109,7 @@
                                     </div>
                                     <span class="m-b-15 d-block">This is awesome website. I would love to comeback again. </span>
                                 </div>
-                            </div> <!-- Comment Row -->
+                            </div> Comment Row
                             <div class="d-flex flex-row comment-row" style="margin-bottom: 20px;">
                                 <div class="p-2"><img src="https://i.imgur.com/J6l19aF.jpg" alt="user" width="50" class="rounded-circle"></div>
                                 <div class="comment-text w-100">
@@ -116,12 +119,14 @@
                                     </div>
                                     <span class="m-b-15 d-block">This is awesome website. I would love to comeback again. </span>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <c:if test="${isLogined }">
+            	<form action="${base }/gui-binh-luan" method="post">
+            		<div class="card">
                 <div class="row">
                     <div class="col-2">
                         <img src="https://i.imgur.com/xELPaag.jpg" width="70" class="rounded-circle mt-2">
@@ -129,6 +134,7 @@
                     <div class="col-10">
                         <div class="comment-box ml-2">
                             <h4>Thêm bình luận</h4>
+                            <input type="text" name="idSanPham" value="${sanPham.id }" style="display: none;"/>
                             <div class="rating">
                                 <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
                                 <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
@@ -137,7 +143,7 @@
                                 <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                             </div>
                             <div class="comment-area">
-                                <textarea class="form-control" placeholder="Bạn nghĩ sản phẩm thế nào?" rows="4"></textarea>
+                                <textarea class="form-control" name="content" placeholder="Bạn nghĩ sản phẩm thế nào?" rows="4"></textarea>
                             </div>
                             <div class="comment-btns mt-2">
                                 <div class="row">
@@ -157,6 +163,8 @@
                     </div>
                 </div>
             </div>
+            	</form>
+            </c:if>
         </div>
     </div>
 

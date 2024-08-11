@@ -219,11 +219,12 @@ public class CartController extends BaseController{
 	public String thanhToanPOST(final Model model,
 			HttpServletRequest request,
 			HttpServletResponse response) {
-		
+	
 		String hoTen = request.getParameter("hoten");
 		String sdt = request.getParameter("sdt");
 		String email = request.getParameter("email");
 		String diaChiNhan = request.getParameter("diachinhan");
+		Integer loaiThanhToan = Integer.parseInt(request.getParameter("loaiThanhToan"));
 		
 		KhachHang khachHang = new KhachHang();
 		if(isLogined()) {
@@ -234,6 +235,24 @@ public class CartController extends BaseController{
 		khachHang.setEmail(email);
 		khachHang.setDiaChi(diaChiNhan);
 		
+		HttpSession session = request.getSession();
+		session.setAttribute("khachHang", khachHang);
+		session.setAttribute("loaiThanhToan", loaiThanhToan);
+		
+		Cart cart = (Cart) session.getAttribute("cart");
+		if(loaiThanhToan != null && loaiThanhToan == 1) {
+			return "redirect:/pay?giaTien=" + cart.getTotalPrice();
+		} else {
+			savePayment(khachHang, request);
+		}
+		return "redirect:/trang-chu";
+	}
+	
+	
+	public void savePayment(
+			KhachHang khachHang,
+			HttpServletRequest request
+		) {
 		KhachHang khachHangUpdate = khachHangService.saveOrUpdate(khachHang);
 		
 		HttpSession session = request.getSession();
@@ -243,7 +262,8 @@ public class CartController extends BaseController{
 		hoaDon.setCreatedDate(new Date());
 		hoaDon.setTongSoLuong(cart.getTotalProducts());
 		hoaDon.setThanhTien(cart.getTotalPrice());
-		
+		hoaDon.setPaymentMethod((Integer) session.getAttribute("loaiThanhToan"));
+		hoaDon.setStatus(1);
 		HoaDon hoaDonUpdate = hoaDonService.saveOrUpdate(hoaDon);
 		
 		for(CartItem cartItem : cart.getCartItems()) {
@@ -257,7 +277,6 @@ public class CartController extends BaseController{
 		}
 		session.setAttribute("cart", null);
 		session.setAttribute("tongsosanphamgiohang", "");
-		return "redirect:/trang-chu";
 	}
 	
 	

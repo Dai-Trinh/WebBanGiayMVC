@@ -46,7 +46,6 @@ public class HoaDon extends BaseEntity{
 	
 	@Transient
 	private String statusString;
-	
 
 	public Integer getPaymentMethod() {
 		return paymentMethod;

@@ -22,6 +22,10 @@
 			            <p>Số điện thoại: <br> <input type="text" name="sdt" value="${khachHang.soDienThoai }" id="" required></p>
 			            <p>Email nhận thông tin đơn hàng: <br> <input type="text" name="email" value="${khachHang.email }" id="" required></p>
 			            <p>Địa chỉ nhận hàng: <br> <input type="text" name="diachinhan" value="${khachHang.diaChi }" required></p>
+			            <p>Hình thức thanh toán: 
+			            	<input type="radio" value="1" name="loaiThanhToan">Thanh toán qua Paypal
+			            	<input type="radio" value="2" name="loaiThanhToan">Thanh toán khi nhận hàng
+			            </p>
 			            <p><input type="submit" value="XÁC NHẬN ĐẶT HÀNG" class="nut xacnhan"></p>
 			            <p><input type="button" value="HỦY" class="nut" onclick="HuyDatHang()"></p>
 		        	</div>
@@ -35,6 +39,10 @@
 			            <p>Số điện thoại: <br> <input type="text" name="sdt" id="" required></p>
 			            <p>Email nhận thông tin đơn hàng: <br> <input type="text" name="email" id="" required></p>
 			            <p>Địa chỉ nhận hàng: <br> <input type="text" name="diachinhan" required></p>
+			            <p>Hình thức thanh toán: </br>
+			            	<input type="radio" value="1" name="loaiThanhToan" class="payment-method">Thanh toán qua Paypal </br>
+			            	<input type="radio" value="2" name="loaiThanhToan" class="payment-method">Thanh toán khi nhận hàng
+			            </p>
 			            <p><input type="submit" value="XÁC NHẬN ĐẶT HÀNG" class="nut xacnhan"></p>
 			            <p><input type="button" value="HỦY" class="nut" onclick="HuyDatHang()"></p>
 		        	</div>
