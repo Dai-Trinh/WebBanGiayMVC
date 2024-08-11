@@ -34,7 +34,10 @@
                 </tr>
                 <tr>
                     <td>Địa chỉ nhận hàng: ${hoaDon.khachHang.diaChi }</td>
-                    <td>Hình thức thanh toán: </td>
+                    <td>Hình thức thanh toán: 
+                    	<c:if test="${hoaDon.paymentMethod == null || hoaDon.paymentMethod == 2 }">Thanh toán khi nhận hàng</c:if>
+                    	<c:if test="${hoaDon.paymentMethod != null && hoaDon.paymentMethod == 1 }">Đã thanh toán qua Paypal</c:if>
+                    </td>
                 </tr>
                 <tr>
                 	<td colspan="2">Trạng thái: ${status }</td>

@@ -108,6 +108,19 @@ public class SanPhamService extends BaseService<SanPham>{
 				
 				dieuKien += " and status = " + sanPhamSearch.getStatus();
 			}
+			
+			if(!StringUtils.isEmpty(sanPhamSearch.getTenSp())) {
+				dieuKien += " and ten_sp like %" + sanPhamSearch.getTenSp() + "%";
+			}
+			
+			if(sanPhamSearch.getMinPrice() != null) {
+				dieuKien += " and gia >= " + sanPhamSearch.getMinPrice();
+			}
+			
+			if(sanPhamSearch.getMinPrice() != null) {
+				dieuKien += " and gia <= " + sanPhamSearch.getMaxPrice();
+			}
+			
 		}
 		String sql = "select * from( select *, row_number() over (order by id desc) as r from san_pham where id_dm_pk is null" + dieuKien + ") as tam";
 		super.setSizeOfPage(sanPhamSearch.getSizeOfPage());

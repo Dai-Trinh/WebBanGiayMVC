@@ -46,28 +46,30 @@
             <p style="text-align: center;margin: 20px;font-size: 30px;"><i class="fa-solid fa-person-running" style="margin-right: 10px;"></i>${danhMucSanPhamBac.tenDanhMuc}</p>
 
             <div class="container mt-4" style="margin-bottom: 20px;">
-                <div class="row">
+                <form action="${base }/san-pham-ao" method="get">
+                	<div class="row">
                     <div class="col-md-12">
                         <div class="filter-container">
                             <h4 class="mb-4">Bộ lọc sản phẩm</h4>
-
+							<input type="text" name="tendm" value="${tendm }" style="display: none;">
                             <div class="form-group">
                                 <label for="search-name">Tìm kiếm theo tên:</label>
-                                <input type="text" id="search-name" class="form-control" placeholder="Nhập tên sản phẩm">
+                                <input type="text" name="tensp" id="search-name" class="form-control" placeholder="Nhập tên sản phẩm">
                             </div>
 
                             <div class="form-group">
                                 <label for="price-min">Khoảng giá:</label>
                                 <div class="d-flex">
-                                    <input type="number" id="price-min" class="form-control mr-2" placeholder="Từ (đồng)" min="0" max="100000000">
-                                    <input type="number" id="price-max" class="form-control" placeholder="Đến (đồng)" min="0" max="100000000">
+                                    <input type="number" name="pricemin" id="price-min" class="form-control mr-2" placeholder="Từ (đồng)" min="0" max="100000000">
+                                    <input type="number" name="pricemax" id="price-max" class="form-control" placeholder="Đến (đồng)" min="0" max="100000000">
                                 </div>
                             </div>
 
-                            <button id="search-button" class="btn btn-primary">Tìm kiếm</button>
+                            <input type="submit" id="search-button" class="btn btn-primary" value="Tìm kiếm"/>
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
 
             <c:set var="counter" value="0"/>

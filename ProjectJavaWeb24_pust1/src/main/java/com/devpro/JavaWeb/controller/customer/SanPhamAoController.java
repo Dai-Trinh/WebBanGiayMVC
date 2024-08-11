@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -16,6 +17,7 @@ import com.devpro.JavaWeb.dto.SanPhamSearch;
 import com.devpro.JavaWeb.model.DanhMucSanPhamBac2;
 import com.devpro.JavaWeb.services.impl.DanhMucBac2Service;
 import com.devpro.JavaWeb.services.impl.SanPhamService;
+import com.ibm.icu.math.BigDecimal;
 
 @Controller
 public class SanPhamAoController extends BaseController {
@@ -41,7 +43,15 @@ public class SanPhamAoController extends BaseController {
 		sanPhamSearch.setPage(1);
 		sanPhamSearch.setDanhMucId(danhMucSanPhamBac2.getId()+"");
 		sanPhamSearch.setSizeOfPage(12);
+		sanPhamSearch.setTenSp(request.getParameter("tensp"));
+		if(!StringUtils.isEmpty(request.getParameter("pricemin"))) {
+			sanPhamSearch.setMinPrice(new BigDecimal(request.getParameter("pricemin")));
+		}
+		if(!StringUtils.isEmpty(request.getParameter("pricemax"))) {
+			sanPhamSearch.setMaxPrice(new BigDecimal(request.getParameter("pricemax")));
+		}
 		
+		model.addAttribute("tendm", tenDM);
 		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch, false));
 		return "customer/sanphamao";
 	}

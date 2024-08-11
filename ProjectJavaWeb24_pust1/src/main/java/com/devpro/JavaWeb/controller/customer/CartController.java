@@ -17,6 +17,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -212,6 +213,11 @@ public class CartController extends BaseController{
 	public String thanhToan(final Model model,
 			HttpServletRequest request,
 			HttpServletResponse response) {
+		Boolean isPayment = false;
+		if(!StringUtils.isEmpty(request.getParameter("ispayment"))) {
+			isPayment = true;
+		}
+		model.addAttribute("payment", isPayment);
 		return "customer/thanhtoan";
 	}
 	
@@ -245,7 +251,7 @@ public class CartController extends BaseController{
 		} else {
 			savePayment(khachHang, request);
 		}
-		return "redirect:/trang-chu";
+		return "redirect:/thanh-toan?ispayment=true";
 	}
 	
 	

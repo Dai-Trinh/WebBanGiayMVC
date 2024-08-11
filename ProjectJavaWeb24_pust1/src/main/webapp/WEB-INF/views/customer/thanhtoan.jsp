@@ -86,17 +86,20 @@
 </div>
 <div class="clear"></div>
 
-<!-- Nền bóng mờ -->
-<div class="overlay"></div>
+<c:if test="${payment }">
+	<div class="overlay"></div>
+	
+	<!-- Mockup thông báo -->
+	<div class="modal" >
+	    <img src="./image/tichXanhThanhCong.png" alt="Dấu tích xanh" class="icon">
+	    <h2>Thanh Toán Thành Công!</h2>
+	    <p style="margin-top: 10px;">ĐƠN HÀNG CỦA BẠN ĐÃ THANH TOÁN THÀNH CÔNG</p>
+	    <p style="font-size: 12px; color: #8a8787;">Nhân viên của chúng tôi sẽ liên hệ thông báo giao hàng với bạn</p>
+	    <a href="${base}/trang-chu" class="button">Quay lại trang chủ</a>
+	</div>
 
-<!-- Mockup thông báo -->
-<div class="modal">
-    <img src="./image/tichXanhThanhCong.png" alt="Dấu tích xanh" class="icon">
-    <h2>Thanh Toán Thành Công!</h2>
-    <p style="margin-top: 10px;">ĐƠN HÀNG CỦA BẠN ĐÃ THANH TOÁN THÀNH CÔNG</p>
-    <p style="font-size: 12px; color: #8a8787;">Nhân viên của chúng tôi sẽ liên hệ thông báo giao hàng với bạn</p>
-    <a href="${base}/trang-chu" class="button">Quay lại trang chủ</a>
-</div>
+</c:if>
+<!-- Nền bóng mờ -->
 
 </body>
 
@@ -104,5 +107,6 @@
     function HuyDatHang() {
         window.location = "/gio-hang";
     }
+    
 </script>
 </html>

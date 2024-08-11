@@ -9,7 +9,8 @@
             <div id="menu">
                 <ul>
                     <li><a href="${base }/trang-chu">TRANG CHỦ</a></li>
-                    <li class="menusanpham"><a href="/san-pham" target="_parent">SẢN PHẨM</a>
+                    <!-- href="/san-pham" -->
+                    <li class="menusanpham"><a target="_parent">SẢN PHẨM</a>
                         <ul class="menucon1">
                             <li class="menuao">
                                 <a href="/san-pham?tenloai=Áo">Sản phẩm mới nhất</a>

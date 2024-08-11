@@ -1,5 +1,7 @@
 package com.devpro.JavaWeb.dto;
 
+import com.ibm.icu.math.BigDecimal;
+
 public class SanPhamSearch extends BaseSearchModel{
 
 	private String keyword;
@@ -8,6 +10,11 @@ public class SanPhamSearch extends BaseSearchModel{
 	
 	private String status;
 	
+	private String tenSp;
+	
+	private BigDecimal minPrice;
+	
+	private BigDecimal maxPrice;
 
 	public String getStatus() {
 		return status;
@@ -31,6 +38,30 @@ public class SanPhamSearch extends BaseSearchModel{
 
 	public void setDanhMucId(String danhMucId) {
 		this.danhMucId = danhMucId;
+	}
+
+	public String getTenSp() {
+		return tenSp;
+	}
+
+	public void setTenSp(String tenSp) {
+		this.tenSp = tenSp;
+	}
+
+	public BigDecimal getMinPrice() {
+		return minPrice;
+	}
+
+	public void setMinPrice(BigDecimal minPrice) {
+		this.minPrice = minPrice;
+	}
+
+	public BigDecimal getMaxPrice() {
+		return maxPrice;
+	}
+
+	public void setMaxPrice(BigDecimal maxPrice) {
+		this.maxPrice = maxPrice;
 	}
 	
 	

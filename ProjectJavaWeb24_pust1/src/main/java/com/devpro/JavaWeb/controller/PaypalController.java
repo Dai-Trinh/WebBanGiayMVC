@@ -76,7 +76,7 @@ public class PaypalController {
             	HttpSession httpSession = request.getSession();
             	KhachHang khachHang = (KhachHang) httpSession.getAttribute("khachHang");
             	cartController.savePayment(khachHang, request);
-                return "redirect:/trang-chu";
+                return "redirect:/thanh-toan?ispayment=true";
             }
         } catch (PayPalRESTException e) {
             System.out.println(e.getMessage());
