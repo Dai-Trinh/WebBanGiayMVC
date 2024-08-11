@@ -7,7 +7,7 @@
         <div id="content">
             <div id="content-left">
                 <div class="avatar">
-                    <img src="${base }/image/avatar_admin.png" alt="">
+                    <img src="${base }/image/logoOff.png" alt="">
                     <p class="admin">ADMIN</p>
                 </div>
                 <hr class="nganavt">

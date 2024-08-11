@@ -44,57 +44,57 @@
                 <div class="wrapper-product-special">
                     <div class="chuasanphamnoibat">
                         <div class="sanphamnoibat">
-                            <img src="./image/spnoibat1.png" alt="">
-                            <p>Quần Âu</p>
+                            <img src="./image/thuonghieu1.jpg" alt="">
+                            <p>Giày Addidas</p>
                         </div>
                         <div class="sanphamnoibat">
-                            <img src="./image/spnoibat2.png" alt="">
-                            <p>Áo Len</p>
+                            <img src="./image/item2.jpg" alt="">
+                            <p>Giày Puma</p>
                         </div>
                         <div class="sanphamnoibat">
-                            <img src="./image/spnoibat3.png" alt="">
-                            <p>Áo Sơ Mi</p>
+                            <img src="./image/item3.jpg" alt="">
+                            <p>Giày Nike</p>
                         </div>
                         <div class="sanphamnoibat">
-                            <img src="./image/spnoibat4.png" alt="">
-                            <p>Arsitino Boss</p>
+                            <img src="./image/item4.png" alt="">
+                            <p>Giày Bitis</p>
                         </div>
 
                     </div>
                     <div class="chuasanphamnoibat fade">
                         <div class="sanphamnoibat fade">
-                            <img src="./image/spnoibat5.png" alt="">
-                            <p>Phụ Kiện</p>
+                            <img src="./image/item6.webp" alt="">
+                            <p>Giày Thượng Đỉnh</p>
                         </div>
                         <div class="sanphamnoibat">
-                            <img src="./image/spnoibat6.png" alt="">
-                            <p>Áo Khoác</p>
+                            <img src="./image/item11.jpg" alt="">
+                            <p>Giày Vans</p>
                         </div>
                         <div class="sanphamnoibat">
-                            <img src="./image/spnoibat7.png" alt="">
-                            <p>Bộ Suit</p>
+                            <img src="./image/item21.webp" alt="">
+                            <p>Giày Reebok</p>
                         </div>
                         <div class="sanphamnoibat">
-                            <img src="./image/spnoibat8.png" alt="">
-                            <p>Áo dài cách tân</p>
+                            <img src="./image/item20.jpg" alt="">
+                            <p>Giày Lười</p>
                         </div>
                     </div>
                     <div class="chuasanphamnoibat fade">
                         <div class="sanphamnoibat fade">
-                            <img src="./image/spnoibat5.png" alt="">
-                            <p>Phụ Kiện</p>
+                            <img src="./image/item22.jpg" alt="">
+                            <p>Giày Jodan</p>
                         </div>
                         <div class="sanphamnoibat">
-                            <img src="./image/spnoibat6.png" alt="">
-                            <p>Áo Khoác</p>
+                            <img src="./image/item23.jpg" alt="">
+                            <p>Giày Balenciaga</p>
                         </div>
                         <div class="sanphamnoibat">
-                            <img src="./image/spnoibat3.png" alt="">
-                            <p>Áo Sơ Mi</p>
+                            <img src="./image/item24.jpg" alt="">
+                            <p>Giày New Balance</p>
                         </div>
                         <div class="sanphamnoibat">
-                            <img src="./image/spnoibat4.png" alt="">
-                            <p>Arsitino Boss</p>
+                            <img src="./image/item25.jpg" alt="">
+                            <p>Giày Converse </p>
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,28 @@
             </div>
         </div>
 
-
+        <div class="container countdown">
+            <div class="danhmucnoibat">
+                <p class="ten">DEAL CỰC HẤP DẪN</p>
+            </div>
+            <div class="row">
+                <div class="col countdown-item">
+                    <span id="days">00</span>
+                    <label>Ngày</label>
+                </div>
+                <div class="col countdown-item">
+                    <span id="hours">00</span>
+                    <label>Giờ</label>
+                </div>
+                <div class="col countdown-item">
+                    <span id="minutes">00</span>
+                    <label>Phút</label>
+                </div>
+                <div class="col countdown-item">
+                    <span id="seconds">00</span>
+                    <label>Giây</label>
+                </div>
+            </div>
     </div>
 </div>
 <div class="clear"></div>
@@ -316,5 +337,34 @@
         window.location = "/chi-tiet-san-pham?id=" + id;
     }
 
+</script>
+
+<script>
+    var countDownDate = new Date().getTime() + 7 * 24 * 60 * 60 * 1000;
+
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("days").innerHTML = "00";
+            document.getElementById("hours").innerHTML = "00";
+            document.getElementById("minutes").innerHTML = "00";
+            document.getElementById("seconds").innerHTML = "00";
+            alert("Countdown finished!");
+        }
+    }, 1000);
 </script>
 </html>

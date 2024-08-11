@@ -155,15 +155,21 @@ hr {
     font-size: 20px;
     margin-bottom: 20px;
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 150px;
 }
 
 #loaisanpham {
     width: 100%;
     margin-top: 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+
 
 #loaisanpham .tenloai {
     font-size: 20px;
@@ -177,6 +183,8 @@ hr {
     float: left;
     margin-bottom: 70px;
     cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
@@ -214,22 +222,22 @@ hr {
     width: 100%;
     position: absolute;
     display: flex;
-    justify-content: space-around;
-    animation: alternate;
 }
-
+.row{
+    display: flex;
+    justify-content: center;
+}
 
 .button_chuyen_sanphamlienquan {
     position: absolute;
     display: flex;
     justify-content: space-between;
-    width: 96%;
+    width: 90%;
     margin-left: 50px;
     font-size: 40px;
     color: gray;
     top: 400px;
-    display: none;
-
+    left: 2%;
 }
 
 

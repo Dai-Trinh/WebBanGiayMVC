@@ -15,7 +15,7 @@ html, body {
 }
 
 #content-left {
-    width: 260px;
+    width: 300px;
     border: 1px solid black;
     height: 800px;
     background-color: gray;

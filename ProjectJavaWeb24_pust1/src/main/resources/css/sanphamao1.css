@@ -22,7 +22,7 @@ html, body {
 }
 
 #tenloaiao {
-    margin-top: 150px;
+    /*margin-top: 150px;*/
     margin-left: 50px;
 }
 
@@ -54,8 +54,10 @@ html, body {
 #loaisanpham {
     width: 100%;
     margin-top: 50px;
+}
+.row{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 #loaisanpham .tenloai {
@@ -70,6 +72,8 @@ html, body {
     float: left;
     margin-bottom: 70px;
     cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
