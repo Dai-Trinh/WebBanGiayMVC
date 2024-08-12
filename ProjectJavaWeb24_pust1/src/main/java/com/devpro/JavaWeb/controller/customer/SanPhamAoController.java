@@ -41,7 +41,9 @@ public class SanPhamAoController extends BaseController {
 		
 		sanPhamSearch.setStatus(1+"");
 		sanPhamSearch.setPage(1);
-		sanPhamSearch.setDanhMucId(danhMucSanPhamBac2.getId()+"");
+		if(danhMucSanPhamBac2.getId()!=null){
+			sanPhamSearch.setDanhMucId(danhMucSanPhamBac2.getId()+"");
+		}
 		sanPhamSearch.setSizeOfPage(12);
 		sanPhamSearch.setTenSp(request.getParameter("tensp"));
 		if(!StringUtils.isEmpty(request.getParameter("pricemin"))) {

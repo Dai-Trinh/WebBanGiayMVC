@@ -11,9 +11,8 @@ html, body {
 
 #thanhtoan {
     width: 100%;
-    /*margin-top: 100px;*/
     position: absolute;
-    margin-top: 100px;
+    top: 100px;
 }
 
 #thanhtoan .tieude {

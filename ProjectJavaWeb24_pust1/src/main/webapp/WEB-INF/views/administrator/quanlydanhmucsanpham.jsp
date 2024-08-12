@@ -21,7 +21,7 @@
     <div id="content-body">
         <div class="tab-layout">
             <button class="danh" id="san-pham">Danh mục sản phẩm</button>
-            <button class="danh" id="phu-kien">Danh mục phụ kiện</button>
+<%--            <button class="danh" id="phu-kien">Danh mục phụ kiện</button>--%>
             
         </div>
         <h2>${tieude}</h2>

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -83,7 +84,10 @@ public class ChiTietSanPhamController extends BaseController {
 		TaiKhoan taiKhoan = super.getUserLogined();
 		Integer idSanPham = Integer.parseInt(request.getParameter("idSanPham"));
 		String content = request.getParameter("content");
-		Integer rate = Integer.parseInt(request.getParameter("rating"));
+		int rate = 0;
+		if(!StringUtils.isEmpty(request.getParameter("rating"))){
+			rate = Integer.parseInt(request.getParameter("rating"));
+		}
 		BinhLuan binhLuan = new BinhLuan();
 		binhLuan.setCreatedBy(taiKhoan.getId());
 		binhLuan.setContent(content);

@@ -15,9 +15,6 @@
                     <ul>
                         <li><a href="${base }/admin/trang-chu">Bảo trì sản phẩm</a></li>
                         <li><a href="${base }/admin/quan-ly-danh-muc-san-pham">Bảo trì danh mục sản phẩm</a></li>
-                        <li><a href="${base }/admin/quan-ly-phu-kien">Bảo trì phụ kiện</a></li>
-                        <li><a>Bảo trì thương hiệu</a></li>
-                        <li><a>Bảo trì cửa hàng</a></li>
                         <li><a href="/admin/quan-ly-hoa-don">Quản lý hóa đơn</a></li>
                         <li><a href="/admin/quan-ly-tai-khoan">Quản lý tài khoản</a></li>
                         
