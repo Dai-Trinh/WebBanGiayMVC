@@ -16,7 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -127,7 +127,7 @@ public class AdminQuanLyDanhMuc extends BaseController{
 	throws IOException {
 		DanhMucSanPhamBac2 dBac2 = new DanhMucSanPhamBac2();
 		Integer idDanhMucSanPham = null;
-		if(!request.getParameter("iddanhmuc").equals(null)) {
+		if(!StringUtils.isEmpty(request.getParameter("iddanhmuc"))) {
 			idDanhMucSanPham = Integer.parseInt(request.getParameter("iddanhmuc"));
 			dBac2.setId(idDanhMucSanPham);
 		}

@@ -43,43 +43,43 @@
             <div class="noibat fade">
                 <div class="wrapper-product-special">
                     <div class="chuasanphamnoibat">
-                        <div class="sanphamnoibat">
+                        <div class="sanphamnoibat" onclick="ChuyenDanhMuc('Giày Addidas')">
                             <img src="./image/thuonghieu1.jpg" alt="">
                             <p>Giày Addidas</p>
                         </div>
-                        <div class="sanphamnoibat">
+                        <div class="sanphamnoibat" onclick="ChuyenDanhMuc('Giày Puma')">
                             <img src="./image/item2.jpg" alt="">
                             <p>Giày Puma</p>
                         </div>
                         <div class="sanphamnoibat">
-                            <img src="./image/item3.jpg" alt="">
+                            <img src="./image/item3.jpg" alt="" onclick="ChuyenDanhMuc('Giày Nike')">
                             <p>Giày Nike</p>
                         </div>
                         <div class="sanphamnoibat">
-                            <img src="./image/item4.png" alt="">
+                            <img src="./image/item4.png" alt="" onclick="ChuyenDanhMuc('Giày Bitis')">
                             <p>Giày Bitis</p>
                         </div>
 
                     </div>
                     <div class="chuasanphamnoibat fade">
-                        <div class="sanphamnoibat fade">
+                        <div class="sanphamnoibat fade" onclick="ChuyenDanhMuc('Giày Thượng Đỉnh')">
                             <img src="./image/item6.webp" alt="">
                             <p>Giày Thượng Đỉnh</p>
                         </div>
-                        <div class="sanphamnoibat">
+                        <div class="sanphamnoibat" onclick="ChuyenDanhMuc('Giày Vans')">
                             <img src="./image/item11.jpg" alt="">
                             <p>Giày Vans</p>
                         </div>
-                        <div class="sanphamnoibat">
+                        <div class="sanphamnoibat" onclick="ChuyenDanhMuc('Giày Reebook')">
                             <img src="./image/item21.webp" alt="">
                             <p>Giày Reebok</p>
                         </div>
-                        <div class="sanphamnoibat">
+                        <div class="sanphamnoibat" onclick="ChuyenDanhMuc('Giày Lười')">
                             <img src="./image/item20.jpg" alt="">
                             <p>Giày Lười</p>
                         </div>
                     </div>
-                    <div class="chuasanphamnoibat fade">
+                    <!-- <div class="chuasanphamnoibat fade">
                         <div class="sanphamnoibat fade">
                             <img src="./image/item22.jpg" alt="">
                             <p>Giày Jodan</p>
@@ -96,7 +96,7 @@
                             <img src="./image/item25.jpg" alt="">
                             <p>Giày Converse </p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -267,6 +267,10 @@
 </body>
 
 <script>
+
+	function ChuyenDanhMuc(tendm){
+		window.location = "/san-pham-ao?tendm=" + tendm;
+	}
 
     function GioHang() {
         window.location = "/gio-hang";

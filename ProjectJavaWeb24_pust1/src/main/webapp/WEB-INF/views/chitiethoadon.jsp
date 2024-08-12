@@ -10,14 +10,21 @@
     <jsp:include page="/WEB-INF/views/common/variables.jsp"></jsp:include>
     <link rel="stylesheet" href="${base }/css/chitiethoadon.css">
     <link rel="stylesheet" href="${base }/css/menu.css">
+    <link rel="stylesheet" href="${base }/css/header1.css">
     <title>Document</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/administrator/layout/menu.jsp"></jsp:include>
+<c:if test="${isUser == null || isUser }">
+    <jsp:include page="/WEB-INF/views/administrator/layout/menu.jsp"></jsp:include>
+</c:if>
+<c:if test="${isUser != null && !isUser }">
+    <jsp:include page="/WEB-INF/views/customer/layout/header.jsp"></jsp:include>
+</c:if>
+
     <div id="chi-tiet-hoa-don">
-    	<c:if test="">
+    	<c:if test="${isUser == null || isUser }">
     		<div style="float: right;">
-    			<input type="button" value="Bắt đầu giao hàng" onclick="ChangeBillStatus('${hoaDon.id }', '-1')"></input>
+    			<input type="button" value="Hủy đơn hàng" onclick="ChangeBillStatus('${hoaDon.id }', '-1')"></input>
     		</div>
     	</c:if>
     	<div style="clear: both;"></div>
@@ -42,7 +49,8 @@
                 <tr>
                 	<td colspan="2">Trạng thái: ${status }</td>
                 </tr>
-                <tr>
+                <c:if test="${isUser == null || isUser }">
+                	<tr>
                 	<c:if test="${hoaDon.status == 1 || hoaDon.status == null }">
 	                	<td>
 	                		<input type="button" value="Duyệt đơn hàng" onclick="ChangeBillStatus('${hoaDon.id }', '2')"></input>
@@ -63,6 +71,7 @@
                 	</c:if>
                 	
                 </tr>
+                </c:if>
             </table>
         </div>
         <div class="thongtinsanpham">

@@ -9,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.devpro.JavaWeb.model.HoaDon;
 import com.devpro.JavaWeb.services.impl.HoaDonService;
+import com.devpro.JavaWeb.services.utils.Utils;
 
 @Controller
 public class ChiTietHoaDon {
@@ -22,7 +24,10 @@ public class ChiTietHoaDon {
 			HttpServletRequest request,
 			HttpServletResponse response) {
 		Integer idhd = Integer.parseInt(request.getParameter("idhd"));
-		model.addAttribute("haoDon", hoaDonService.getById(idhd));
+		HoaDon hoaDon = hoaDonService.getById(idhd);
+		model.addAttribute("isUser", false);
+		model.addAttribute("hoaDon", hoaDon);
+		model.addAttribute("status", Utils.convertStatus(hoaDon.getStatus()));
 		return "chitiethoadon";
 	}
 }
