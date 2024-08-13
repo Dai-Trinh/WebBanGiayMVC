@@ -10,6 +10,8 @@ public class SanPhamSearch extends BaseSearchModel{
 	
 	private String status;
 	
+	private Integer statusSearch;
+
 	private String tenSp;
 	
 	private BigDecimal minPrice;
@@ -64,6 +66,12 @@ public class SanPhamSearch extends BaseSearchModel{
 		this.maxPrice = maxPrice;
 	}
 	
-	
+	public Integer getStatusSearch() {
+		return statusSearch;
+	}
+
+	public void setStatusSearch(Integer statusSearch) {
+		this.statusSearch = statusSearch;
+	}
 	
 }

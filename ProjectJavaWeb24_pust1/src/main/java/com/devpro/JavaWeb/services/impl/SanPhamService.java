@@ -90,8 +90,11 @@ public class SanPhamService extends BaseService<SanPham>{
 			if(sanPhamSearch.getDanhMucId() != null && !"0".equals(sanPhamSearch.getDanhMucId())) {
 				dieuKien += " and id_dm_sp = " + sanPhamSearch.getDanhMucId();
 			}
-		
-
+			
+			if(sanPhamSearch.getStatusSearch() != null && sanPhamSearch.getStatusSearch() != 0) {
+				dieuKien += " and status = " + sanPhamSearch.getStatusSearch();
+			}
+	
 			// tìm kiếm theo title và description
 			if (!StringUtils.isEmpty(sanPhamSearch.getKeyword())) {
 				dieuKien += " and (ten_sp like '%" + sanPhamSearch.getKeyword() + "%')";

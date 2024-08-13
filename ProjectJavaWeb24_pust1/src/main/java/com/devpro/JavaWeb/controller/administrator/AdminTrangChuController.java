@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,7 @@ import com.devpro.JavaWeb.model.SanPham;
 import com.devpro.JavaWeb.services.impl.DanhMucBac1Service;
 import com.devpro.JavaWeb.services.impl.DanhMucBac2Service;
 import com.devpro.JavaWeb.services.impl.SanPhamService;
+import com.ibm.icu.math.BigDecimal;
 
 import antlr.collections.List;
 
@@ -60,6 +62,17 @@ public class AdminTrangChuController extends BaseController{
 		}
 		sanPhamSearch.setKeyword(request.getParameter("timkiemten"));
 		sanPhamSearch.setDanhMucId(request.getParameter("timkiemloaisp"));
+		if(
+				StringUtils.hasText(request.getParameter("timkiemtrangthai"))
+		) {
+			sanPhamSearch.setStatusSearch(Integer.parseInt(request.getParameter("timkiemtrangthai")));
+		}
+		if(!StringUtils.isEmpty(request.getParameter("pricemin"))) {
+			sanPhamSearch.setMinPrice(new BigDecimal(request.getParameter("pricemin")));
+		}
+		if(!StringUtils.isEmpty(request.getParameter("pricemax"))) {
+			sanPhamSearch.setMaxPrice(new BigDecimal(request.getParameter("pricemax")));
+		}
 		sanPhamSearch.setPage(so);
 		sanPhamSearch.setSizeOfPage(6);
 		//List<SanPham> liPhams = sanPhamService.searchProduct(sanPhamSearch);

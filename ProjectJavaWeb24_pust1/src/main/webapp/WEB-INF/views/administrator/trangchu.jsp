@@ -26,7 +26,7 @@
                         <input type="text" placeholder="Tìm kiếm tên...." name="timkiemten" class="timkiemten" value="${sanPhamSearch.keyword }">
                         
                         <select name="timkiemloaisp" id="searchiiddanhmuc">
-                            <option value="0" selected>All</option>
+                            <option value="0" selected>Tất cả</option>
                             <c:forEach items="${danhMucSanPhamBac2 }" var="b2">
                             
                             <c:if test="${b2.id == sanPhamSearch.danhMucId }">
@@ -38,6 +38,26 @@
                             	
                             </c:forEach>
                             
+                        </select>
+                        Giá: 
+                        <input type="text" placeholder="Nhập giá..." name="mingia" class="timkiemten" value="${sanPhamSearch.minPrice }">
+                        đến:
+                        <input type="text" placeholder="Nhập giá...." name="maxgia" class="timkiemten" value="${sanPhamSearch.maxPrice }">
+                        Trạng thái:
+                        <select name="timkiemtrangthai" id="searchiiddanhmuc">
+                            <option value="0" selected>Tất cả</option>
+                       		<c:if test="${sanPhamSearch.statusSearch == 1 }">
+                       			<option value="1" selected="selected">Đang bán</option>
+                       		</c:if>
+                            <c:if test="${sanPhamSearch.statusSearch != 1 }">
+                       			<option value="1">Đang bán</option>
+                       		</c:if>
+                            <c:if test="${sanPhamSearch.statusSearch == -1 }">
+                       			<option value="-1" selected="selected">Ngừng bán</option>
+                       		</c:if>
+                            <c:if test="${sanPhamSearch.statusSearch != -1 }">
+                       			<option value="-1">Ngừng bán</option>
+                       		</c:if>
                         </select>
                         <input type="submit" value="Tìm kiếm" class="timkiem" id="timkiem"/>
                     </div>
@@ -55,7 +75,7 @@
                                 <th>Ảnh</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Hãng sản phẩm</th>
-                                <th>Số lượng</th>
+                                <th>Phiên bản</th>
                                 <th>Đơn giá</th>
                                 <th>Trạng thái</th>
                                 <th></th>
@@ -67,7 +87,7 @@
                                 <td><img src="${base }/image/${sp.hinhAnh}" alt="áo polo"></td>
                                 <td>${sp.tenSanPham }</td>
                                 <td>${sp.danhMucSanPhamBac2.tenDanhMuc }</td>
-                                <td>${sp.soLuong }</td>
+                                <td>${sp.thietKe }</td>
                                 <td>${sp.getEpGia() }</td>
                                 <td>
                                 	<c:if test="${sp.status == 1 }">

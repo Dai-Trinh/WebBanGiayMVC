@@ -48,9 +48,9 @@
         <p>Size <br>
             <sf:input path="size" type="text" name="size" id="" readonly="${isRead }"></sf:input>
         </p>
-        <p>Số lượng <br>
+        <%-- <p>Số lượng <br>
             <sf:input path="soLuong" type="text" name="soluong" id="" readonly="${isRead }"></sf:input>
-        </p>
+        </p> --%>
         <p>Đơn giá <br>
             <sf:input path="gia" type="text" name="dongia" id="" readonly="${isRead }"></sf:input>
         </p>
