@@ -53,7 +53,7 @@ public class AdminQuanLyDanhMuc extends BaseController{
 		XoaDuLieu(model);
 		danhMucSearch.setTenDanhMuc(request.getParameter("tendanhmuc"));
 		danhMucSearch.setPage(1);
-		danhMucSearch.setSizeOfPage(6);
+		danhMucSearch.setSizeOfPage(10);
 		model.addAttribute("link", "admin/quan-ly-danh-muc-san-pham");
 		model.addAttribute("tieude", "Danh mục sản phẩm");
 		model.addAttribute("danhMucSPB2", danhMucBac2Service.searchDanhMucBac2(danhMucSearch));

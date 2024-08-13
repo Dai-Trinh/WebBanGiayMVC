@@ -19,12 +19,12 @@
 
 	<jsp:include page="/WEB-INF/views/administrator/layout/menu.jsp"></jsp:include>
     <div id="content-body">
-        <div class="tab-layout">
+       <%--  <div class="tab-layout">
             <button class="danh" id="san-pham">Danh mục sản phẩm</button>
-<%--            <button class="danh" id="phu-kien">Danh mục phụ kiện</button>--%>
+           <button class="danh" id="phu-kien">Danh mục phụ kiện</button>
             
-        </div>
-        <h2>${tieude}</h2>
+        </div> --%>
+        <h2>Hãng sản phẩm</h2>
         <div class="tim-kiem">
             <form action="${base }/${link}" method="get">
                 <input type="search" class="nhap" placeholder="Tìm kiếm tên danh mục..." name="tendanhmuc" id="">
@@ -37,14 +37,14 @@
             <c:choose>
             	<c:when test="${danhMucSPB2.data != null and danhMucSPB2.data.size() > 0 }">
             		<form action="${base }/admin/them-danh-muc-san-pham" method="post">
-	                    <p>Tên danh mục: <br>
-	                    	<input type="text" name="iddanhmuc" id="id-danh-muc" style="display: none;">  
+	                    <p>Tên hãng sản phẩm: <br>
+	                    	<input type="text" name="iddanhmuc" id="id-danh-muc" style="display: none;" required="required">  
 	                    	<input type="text" class="nhap" id="sua-danh-muc" name="tendanhmuc" required="required"></input>
 	                    	<i class="ti-close xoa" onclick="XoaThem()"></i>
 	                    	<input type="submit" value="Thêm" class="nut-danh-muc">
 	                    </p>
-	                    <p>Danh mục: <br>
-	                    	<select style="height: 30px; width: 200px;" name="danhmucbac1">
+	                    <p>Chọn danh mục: <br>
+	                    	<select style="height: 30px; width: 200px;" name="danhmucbac1" required="required">
 	                    		<option value="0">---------</option>
 	                    		<c:forEach items="${danhMucSanPhamBac1 }" var="b1">
 	                    			<option id="${b1.id }" value="${b1.id }">${b1.tenDanhMuc }</option>
@@ -67,7 +67,7 @@
             <table>
                 <tr>
                     <th>Mã</th>
-                    <th>Tên danh mục</th>
+                    <th>Tên hãng</th>
                     <th>Trạng thái</th>
                     <th>
                         
@@ -122,15 +122,16 @@
                 
             </table>
         </div>
-        
-    </div>
-    <div class="phan-trang">
-        <form action="${base}/${link}" method="post">
-            <input type="submit" value="1" name="sotrang" id="sotrang" style="display: none;">
+        <div class="phan-trang">
+        <form action="${base }/${link }" method="post">
+            <input type="submit" id="sotrang" name="sotrang" value="" style="display: none">
             
         </form>
         <div id="paging"></div>
     </div>
+        
+    </div>
+    
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

@@ -54,7 +54,7 @@
                                 <th>STT</th>
                                 <th>Ảnh</th>
                                 <th>Tên sản phẩm</th>
-                                <th>Loại sản phẩm</th>
+                                <th>Hãng sản phẩm</th>
                                 <th>Số lượng</th>
                                 <th>Đơn giá</th>
                                 <th>Trạng thái</th>
@@ -80,7 +80,7 @@
                                 <td>
                                     <input type="button" name="" id="" value="Sửa" onclick="SuaSanPham('${sp.id}')">
                                     <input type="button" name="" id="" value="Xóa" onclick="XacNhanXoa(${sp.id})">
-                                    <!-- <input type="button" name="" id="" value="Chi tiết"> -->
+                                    <input type="button" name="" id="" value="Chi tiết" onclick="ChiTietSanPham('${sp.id }')">
                                     <input type="button" name="" id="" value="Cập nhật trạng thái" onclick="CapNhatTrangThai('${sp.id}')"/>
                                 </td>
                             </tr>
@@ -163,6 +163,10 @@
 	function SuaSanPham(id) {
 	window.location = "/admin/sua-san-pham?id=" + id;
 	}
+	
+	function ChiTietSanPham(id) {
+		window.location = "/admin/chi-tiet?id=" + id;
+		}
 	
 	var idXoa = 0;
 

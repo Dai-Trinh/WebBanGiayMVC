@@ -24,10 +24,12 @@
    
    <sf:form modelAttribute="sanPham" action="${base }/admin/them-san-pham-spring" method="post" enctype="multipart/form-data">
    	<div class="content-them">
-   <h1>Thêm sản phẩm</h1>
+   <h1>${title }</h1>
    <div id="upanh">
     <p><img src="${base }/image/${sanPham.hinhAnh}" alt="" class="hienthianh"></p>
-    <p><input type="file" name="anhSanPham" id="" class="chonanh"></p>
+    <c:if test="${isRead }">
+    	<p><input type="file" name="anhSanPham" id="" class="chonanh"></p>
+    </c:if>
    </div>
 
    <div class="content-body">
@@ -37,20 +39,20 @@
         </p>
    		</c:if>
         <p>Tên sản phẩm <br>
-        <sf:input path="tenSanPham" type="text" name="tensp" id=""></sf:input>
+        <sf:input path="tenSanPham" type="text" name="tensp" id="" readonly="${isRead }"></sf:input>
         </p>
         <p>Màu sắc <br>
-        <sf:input path="mauSac" type="text" name="mausac" id=""></sf:input>
+        <sf:input path="mauSac" type="text" name="mausac" id="" readonly="${isRead }"></sf:input>
         </p>
         
         <p>Size <br>
-            <sf:input path="size" type="text" name="size" id=""></sf:input>
+            <sf:input path="size" type="text" name="size" id="" readonly="${isRead }"></sf:input>
         </p>
         <p>Số lượng <br>
-            <sf:input path="soLuong" type="text" name="soluong" id=""></sf:input>
+            <sf:input path="soLuong" type="text" name="soluong" id="" readonly="${isRead }"></sf:input>
         </p>
         <p>Đơn giá <br>
-            <sf:input path="gia" type="text" name="dongia" id=""></sf:input>
+            <sf:input path="gia" type="text" name="dongia" id="" readonly="${isRead }"></sf:input>
         </p>
         
         <%-- <p> Danh mục sản phẩm <br>
@@ -75,23 +77,23 @@
             </select>
         </p>
          --%>
-         <p>Loại sản phẩm</p>
+         <p>Hãng sản phẩm</p>
          <sf:select path="danhMucSanPhamBac2.id">
-         	<sf:options items="${danhMucSanPhamBac2 }" itemValue="id" itemLabel="tenDanhMuc"/>
+         	<sf:options items="${danhMucSanPhamBac2 }" itemValue="id" itemLabel="tenDanhMuc" readonly="${isRead }"/>
          </sf:select>
          
-        <p>Form dáng <br>
-            <sf:input path="formDang" type="text" name="" id=""></sf:input>
+<%--         <p>Form dáng <br>
+            <sf:input path="formDang" type="text" name="" id="" readonly="true"></sf:input>
+        </p> --%>
+        <p>Phiên bản <br>
+            <sf:textarea path="thietKe" name="" id="summernoteThietKe" cols="30" rows="10" readonly="${isRead }"></sf:textarea>
         </p>
-        <p>Thiết kế <br>
-            <sf:textarea path="thietKe" name="" id="summernoteThietKe" cols="30" rows="10"></sf:textarea>
-        </p>
-        <p>Chất liệu <br>
-            <sf:textarea path="chatLieu" name="" id="summernoteChatLieu" cols="30" rows="10"></sf:textarea>
+        <p>Mô tả <br>
+            <sf:textarea path="chatLieu" name="" id="summernoteChatLieu" cols="30" rows="10" readonly="${isRead }"></sf:textarea>
         </p>
         
         <p>
-            <c:if test="${sanPham.id != null }">
+            <c:if test="${sanPham.id != null && !isRead}">
             	<input type="submit" name="nutchon" class="nut" value="Cập nhật">
             </c:if>
             <c:if test="${sanPham.id == null }">

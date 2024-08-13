@@ -28,7 +28,7 @@
 
    <div class="content-body">
         <p>Tên sản phẩm <br>
-        <sf:input path="tenSanPham" type="text" name="tensp" id="" ></sf:input>
+        <sf:input path="tenSanPham" type="text" name="tensp" id=""></sf:input>
         </p>
         <p>Màu sắc <br>
         <sf:input path="mauSac" type="text" name="mausac" id="" ></sf:input>
@@ -74,7 +74,7 @@
         <p>Form dáng <br>
             <sf:input path="formDang" type="text" name="" id=""></sf:input>
         </p>
-        <p>Thiết kế <br>
+        <p>Phiên bản <br>
             <sf:textarea path="thietKe" name="" id="" cols="30" rows="10"></sf:textarea>
         </p>
         <p>Chất liệu <br>

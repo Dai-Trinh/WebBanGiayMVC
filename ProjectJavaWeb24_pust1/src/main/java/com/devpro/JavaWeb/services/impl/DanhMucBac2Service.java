@@ -25,7 +25,7 @@ public class DanhMucBac2Service extends BaseService<DanhMucSanPhamBac2>{
 			dieuKien = " and ten_dm like '%" + danhMucSearch.getTenDanhMuc() + "%'";
 		}
 		super.setSizeOfPage(danhMucSearch.getSizeOfPage());
-		String sql = "select * from danh_muc_san_pham_bac2 where 1 = 1" + dieuKien + " order by id desc";
+		String sql = "select * from danh_muc_san_pham_bac2 where 1 = 1 and status != 0" + dieuKien + " order by id desc";
 		return getEntitiesByNativeSQL(sql, danhMucSearch.getPage());
 	}
 	

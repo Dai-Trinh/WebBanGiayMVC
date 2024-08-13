@@ -58,15 +58,15 @@
         <div class="duoi">
             <p class="thongtin">Thông tin sản phẩm</p>
             <hr>
-            <p class="nd"><strong>Kiểu dáng: </strong>${sanPham.formDang }</p>
-            <p class="nd"><strong>Thiết kế:</strong></p>
+            <%-- <p class="nd"><strong>Kiểu dáng: </strong>${sanPham.formDang }</p> --%>
+            <p class="nd"><strong>Phiên bản:</strong></p>
             <p>${sanPham.thietKe }</p>
             <%-- <c:forEach begin="1" items="${thietKe }" var="t">
             	<p>- ${t}</p>
             </c:forEach> --%>
             <!-- <p>- Áo polo dài tay phom dáng Tech Golf được tinh chỉnh các thông số đem lại sự thoải mái tối đa theo từng cử động của golfer. Áo được nâng cấp tính năng Anti UV, giúp bảo vệ làn da với chỉ số kháng tia UV lên tới 98% và bền bỉ trong suốt thời gian sử dụng. Công nghệ sợi vải Moisture Wicking giúp áo thấm hút tốt, đồng thời khô nhanh hơn.</p>
             <p>- Thiết kế khỏe khoắn, màu sắc nam tính, cùng họa tiết đại bàng độc đáo, sáng tạo trên ngực trái áo đem đến diện mạo trẻ trung và lịch lãm cho người mặc.</p> -->
-            <p class="nd"><strong>Chất liệu:</strong></p>
+            <p class="nd"><strong>Mô tả:</strong></p>
             <p>${sanPham.chatLieu }</p>
             <%-- <c:forEach begin="1" items="${chatLieu }" var="c">
             	<p>-${c }</p>

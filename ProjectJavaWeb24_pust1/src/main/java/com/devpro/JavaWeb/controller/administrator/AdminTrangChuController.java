@@ -28,6 +28,8 @@ import com.devpro.JavaWeb.services.impl.DanhMucBac1Service;
 import com.devpro.JavaWeb.services.impl.DanhMucBac2Service;
 import com.devpro.JavaWeb.services.impl.SanPhamService;
 
+import antlr.collections.List;
+
 
 @Controller
 public class AdminTrangChuController extends BaseController{
@@ -85,8 +87,9 @@ public class AdminTrangChuController extends BaseController{
 		
 		int so = Integer.parseInt(request.getParameter("sotrang"));
 		sanPhamSearch.setPage(so);
+		System.out.println(so);
 		index = so*6 - 6;
-//		model.addAttribute("sotrang", soTrang);
+		model.addAttribute("sotrang", soTrang);
 		model.addAttribute("index", index);
 //		List<SanPham> sanPhams = sanPhamService.searchProductPhanTrang(sanPhamSearch, so); //sanPhamService.getEntitiesByNativeSQL("select * from( select *, row_number() over (order by id desc) as r from san_Pham) as tam where r between "+ (so*6-5) +" and " + (so * 6));
 		model.addAttribute("sanPhams", sanPhamService.searchSanPham(sanPhamSearch, true));
@@ -117,7 +120,8 @@ public class AdminTrangChuController extends BaseController{
 		model.addAttribute("sanPham" ,sanPham1);
 //		List<DanhMucSanPhamBac2> danhMucSanPhamBac2 = danhMucBac2Service.findAll();
 //		model.addAttribute("danhMucSanPhamBac2", danhMucSanPhamBac2);
-		
+		model.addAttribute("title", "Thêm sản phẩm");
+		model.addAttribute("isRead", false);
 		return "administrator/themsanpham";
 	}
 	
@@ -151,6 +155,25 @@ public class AdminTrangChuController extends BaseController{
 //		List<DanhMucSanPhamBac2> danhMucSanPhamBac2 = danhMucBac2Service.findAll();
 //		model.addAttribute("danhMucSanPhamBac2", danhMucSanPhamBac2);
 		SanPham sanPham = sanPhamService.getById(id);
+		model.addAttribute("title", "Cập nhật sản phẩm");
+		model.addAttribute("isRead", false);
+		model.addAttribute("sanPham" ,sanPham);
+		
+		
+		return "administrator/themsanpham";
+	}
+	
+	@RequestMapping(value = "admin/chi-tiet", method = RequestMethod.GET)
+	public String chiTietSanPhamGet(Model model,
+			HttpServletRequest request,
+			HttpServletResponse response)
+	throws IOException {
+		Integer id = Integer.parseInt(request.getParameter("id"));
+//		List<DanhMucSanPhamBac2> danhMucSanPhamBac2 = danhMucBac2Service.findAll();
+//		model.addAttribute("danhMucSanPhamBac2", danhMucSanPhamBac2);
+		SanPham sanPham = sanPhamService.getById(id);
+		model.addAttribute("title", "Chi tiết sản phẩm");
+		model.addAttribute("isRead", true);
 		model.addAttribute("sanPham" ,sanPham);
 		
 		
