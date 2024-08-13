@@ -33,7 +33,7 @@ public class SanPhamService extends BaseService<SanPham>{
 	public SanPham themSanPham(SanPham sanPham, MultipartFile multipartFile) throws IllegalStateException, IOException {
 		String fileName = multipartFile.getOriginalFilename();
 		
-		String path = "D:/KHJavaSpring/ProjectJavaWeb24/src/main/resources/image/" + fileName;
+		String path = "D:\\Road_BE\\Project\\spring\\WebBanGiayMVC\\ProjectJavaWeb24_pust1\\src\\main\\resources\\image\\" + fileName;
 		
 		multipartFile.transferTo(new File(path));
 		
@@ -189,9 +189,9 @@ public class SanPhamService extends BaseService<SanPham>{
 	public SanPham updateSanPham(SanPham sanPham, MultipartFile multipartFile) throws IllegalStateException, IOException {
 		SanPham sanPhaninDB = super.getById(sanPham.getId());
 		if(!isEmptyUploadFile(multipartFile)) {
-			new File("D:/KHJavaSpring/ProjectJavaWeb24/src/main/resources/image/" + sanPhaninDB.getHinhAnh()).delete();
+			new File("D:\\Road_BE\\Project\\spring\\WebBanGiayMVC\\ProjectJavaWeb24_pust1\\src\\main\\resources\\image\\" + sanPhaninDB.getHinhAnh()).delete();
 			
-			multipartFile.transferTo(new File("D:/KHJavaSpring/ProjectJavaWeb24/src/main/resources/image/" + multipartFile.getOriginalFilename()));
+			multipartFile.transferTo(new File("D:\\Road_BE\\Project\\spring\\WebBanGiayMVC\\ProjectJavaWeb24_pust1\\src\\main\\resources\\image\\" + multipartFile.getOriginalFilename()));
 			sanPham.setHinhAnh(multipartFile.getOriginalFilename());
 		} else {
 			sanPham.setHinhAnh(sanPhaninDB.getHinhAnh());

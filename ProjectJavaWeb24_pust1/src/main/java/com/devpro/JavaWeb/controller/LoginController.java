@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class LoginController extends BaseController{
 	
 	@RequestMapping(value = { "/login" }, method = RequestMethod.GET)
-	public String login(final Model model, 
-					   final HttpServletRequest request, 
+	public String login(final Model model,
+					   final HttpServletRequest request,
 					   final HttpServletResponse response)
 			throws IOException {
-		return "dangnhap";
+		return "dangnhap_admin";
 	}
 
 }
