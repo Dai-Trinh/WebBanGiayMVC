@@ -17,19 +17,19 @@
 <%--        <img src="./image/banner11.png" alt="" class="fb">--%>
 <%--    </div>--%>
     <div id="dangnhap-admin"  style="width: 100%;">
-        <form action="${base }/login_processing_url" method="post"
+        <form action="${base }/login_processing_url" method="post" id="form-login"
               style="display: flex;justify-content: center;align-items: center; height: 100vh;">
             <div id="dangky" style="position: relative;">
                 <img src="./image/logoOff.png" alt="" class="logo-center-admin">
                 <p>ĐĂNG NHẬP ADMIN</p>
                 <div class="tendangnhap">
                     <label>Email</label>
-                    <input type="email" name="username" placeholder="Email">
+                    <input type="email" name="username" id="username" placeholder="Email" required="required">
                 </div>
 
                 <div class="matkhau">
                     <label>Mật khẩu</label>
-                    <input type="password" name="password" placeholder="Mật khẩu">
+                    <input type="password" name="password" placeholder="Mật khẩu" required="required">
                 </div>
 
                 <div class="luumatkhau">
@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="dangnhap">
-                    <input type="submit" value="ĐĂNG NHẬP">
+                    <input type="button" value="ĐĂNG NHẬP" onclick="logIn()">
                 </div>
 
                 <c:if test="${not empty param.login_error}">
@@ -63,6 +63,25 @@
 
 
 </div>
+<script type="text/javascript">
+	
+	function isValidEmail(email) {
+	    // Regular expression for basic email validation
+	    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	    return regex.test(email);
+	}
+	
+	function logIn(){
+		const inputElement = document.getElementById('username');
+		if(isValidEmail(inputElement.value)){
+			document.getElementById('form-login').submit();
+		} else {
+			alert("Định dạng email không hợp lệ!");
+		}
+	
+	}
+
+</script>
 
 </body>
 </html>

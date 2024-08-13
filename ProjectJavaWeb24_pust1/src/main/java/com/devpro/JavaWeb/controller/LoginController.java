@@ -18,7 +18,16 @@ public class LoginController extends BaseController{
 					   final HttpServletRequest request,
 					   final HttpServletResponse response)
 			throws IOException {
+		return "dangnhap";
+	}
+
+	@RequestMapping(value = { "/admin/login" }, method = RequestMethod.GET)
+	public String adminLogin(final Model model,
+					   final HttpServletRequest request,
+					   final HttpServletResponse response)
+			throws IOException {
 		return "dangnhap_admin";
 	}
 
+	
 }

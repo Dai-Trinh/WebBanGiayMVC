@@ -22,19 +22,21 @@ public class SecurConfig extends WebSecurityConfigurerAdapter{
 		// trình duyệt đều được bắt trong hàm này
 		
 		//cho phép các request static resources không bị ràng buộc(permitAll)
-		.antMatchers("/css/**", "/js/**", "/upload/**", "/img/**", "/login", "/logout").permitAll()
+		.antMatchers("/css/**", "/js/**", "/upload/**", "/img/**", "/login", "/admin/login", "/logout").permitAll()
 		
 		//các request kiểu: "/admin/" phải xác thực rồi(đã login) mới được vào (authenticated)
 		.antMatchers("/admin/**").hasAnyAuthority("ADMIN")
+		
 		
 		.and()
 		
 		//nếu chưa xác thực thì hiển thị trang login
 		// /login: một request trong LoginController
-		.formLogin().loginPage("/login").loginProcessingUrl("/login_processing_url")
+				.formLogin().loginPage("/admin/login")
+				.loginProcessingUrl("/login_processing_url")
 		.successHandler(new UrlAuthenticationSuccessHandler())
 //		.defaultSuccessUrl("/trang-chu", true) // login thành công thì luôn trở về trang người dùng
-		.failureUrl("/login?login_error=true")
+		.failureUrl("/admin/login?login_error=true")
 		
 		.and()
 		
