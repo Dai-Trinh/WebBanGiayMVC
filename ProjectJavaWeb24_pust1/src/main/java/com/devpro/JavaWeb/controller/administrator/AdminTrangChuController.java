@@ -62,6 +62,7 @@ public class AdminTrangChuController extends BaseController{
 		}
 		sanPhamSearch.setKeyword(request.getParameter("timkiemten"));
 		sanPhamSearch.setDanhMucId(request.getParameter("timkiemloaisp"));
+		sanPhamSearch.setPhienBan(request.getParameter("timkiemphienban"));
 		if(
 				StringUtils.hasText(request.getParameter("timkiemtrangthai"))
 		) {

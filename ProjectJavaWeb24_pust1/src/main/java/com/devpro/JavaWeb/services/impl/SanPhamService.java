@@ -124,6 +124,10 @@ public class SanPhamService extends BaseService<SanPham>{
 				dieuKien += " and gia <= " + sanPhamSearch.getMaxPrice();
 			}
 			
+			if(StringUtils.hasLength(sanPhamSearch.getPhienBan())) {
+				dieuKien += " and thiet_ke like %" + sanPhamSearch.getPhienBan() + "%";
+			}
+			
 		}
 		String sql = "select * from( select *, row_number() over (order by id desc) as r from san_pham where id_dm_pk is null" + dieuKien + ") as tam";
 		super.setSizeOfPage(sanPhamSearch.getSizeOfPage());

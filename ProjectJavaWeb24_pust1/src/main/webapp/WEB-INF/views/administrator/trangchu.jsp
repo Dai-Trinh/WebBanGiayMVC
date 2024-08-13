@@ -43,6 +43,8 @@
                         <input type="text" placeholder="Nhập giá..." name="mingia" class="timkiemten" value="${sanPhamSearch.minPrice }">
                         đến:
                         <input type="text" placeholder="Nhập giá...." name="maxgia" class="timkiemten" value="${sanPhamSearch.maxPrice }">
+                        Phiên bản:
+                        <input type="text" placeholder="Tìm kiếm tên...." name="timkiemphienban" class="timkiemten" value="${sanPhamSearch.phienBan }">
                         Trạng thái:
                         <select name="timkiemtrangthai" id="searchiiddanhmuc">
                             <option value="0" selected>Tất cả</option>

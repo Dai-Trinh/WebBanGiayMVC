@@ -17,6 +17,8 @@ public class SanPhamSearch extends BaseSearchModel{
 	private BigDecimal minPrice;
 	
 	private BigDecimal maxPrice;
+	
+	private String phienBan;
 
 	public String getStatus() {
 		return status;
@@ -73,5 +75,16 @@ public class SanPhamSearch extends BaseSearchModel{
 	public void setStatusSearch(Integer statusSearch) {
 		this.statusSearch = statusSearch;
 	}
+
+	public String getPhienBan() {
+		return phienBan;
+	}
+
+	public void setPhienBan(String phienBan) {
+		this.phienBan = phienBan;
+	}
+
+	
+	
 	
 }
