@@ -51,7 +51,7 @@
                 </div>
                 <div class="clear"></div>
                 <p class="themgh" onclick="ThemSanPhamGH('${base}',${sanPham.id })"><i class="ti-shopping-cart" ></i>Thêm vào giỏ hàng</p>
-                <p class="mua">Mua ngay</p>
+                <p class="mua" onclick="MuaHang('${base}','${sanPham.id }')">Mua ngay</p>
             </div>
             <div class="clear"></div>
         </div>
@@ -336,6 +336,15 @@
 		AddToCart(_baseUrl, _productId ,soLuong, size);
 	}
     
+    function MuaHang(_baseUrl, _productId) {
+    	if(size == ""){
+			alert("Bạn phải chọn size");
+			return;
+		}
+    	soLuong = parseInt(document.getElementById('soluong').innerHTML);
+		AddToCart(_baseUrl, _productId ,soLuong, size);
+    	window.location = "/thanh-toan";
+	}
     
 </script>
 

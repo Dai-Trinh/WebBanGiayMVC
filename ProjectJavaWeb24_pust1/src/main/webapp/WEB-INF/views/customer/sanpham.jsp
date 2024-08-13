@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="${base}/css/sanpham2.css">
     <link rel="stylesheet" href="${base}/css/header1.css">
     <link rel="stylesheet" href="${base }/icon/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="${base}/css/simplePagination.css">
+    <link rel="stylesheet" href="${base }/css/simplePagination.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>Sản phẩm</title>
 </head>
