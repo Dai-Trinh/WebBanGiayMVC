@@ -70,7 +70,7 @@
                             <img src="./image/item11.jpg" alt="">
                             <p>Giày Vans</p>
                         </div>
-                        <div class="sanphamnoibat" onclick="ChuyenDanhMuc('Giày Reebook')">
+                        <div class="sanphamnoibat" onclick="ChuyenDanhMuc('Giày Reebok')">
                             <img src="./image/item21.webp" alt="">
                             <p>Giày Reebok</p>
                         </div>
