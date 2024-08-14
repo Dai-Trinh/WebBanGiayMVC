@@ -27,6 +27,11 @@
     			<input type="button" value="Hủy đơn hàng" onclick="ChangeBillStatus('${hoaDon.id }', '-1')"></input>
     		</div>
     	</c:if>
+    	<c:if test="${isUser != null && !isUser && (hoaDon.status == null || hoaDon.status == 1 || hoaDon.status == 2) }">
+		    <div style="float: right;">
+		    	<input type="button" value="Hủy đơn hàng" onclick="ChangeBillStatusUser('${hoaDon.id }', '-1')"></input>
+		    </div>
+		</c:if>
     	<div style="clear: both;"></div>
         <h1>CHI TIẾT HÓA ĐƠN</h1>
         <div class="thongtinhoadon">
@@ -118,6 +123,11 @@
 	function ChangeBillStatus(id, status) {
 		console.log("id: " + id + " status: " + status);
 		window.location = "/admin/bill/chang-status?idhd=" + id + "&status=" + status;
+	}
+	
+	function ChangeBillStatusUser(id, status) {
+		console.log("id: " + id + " status: " + status);
+		window.location = "/bill/chang-status?idhd=" + id + "&status=" + status;
 	}
 </script>
 

@@ -17,7 +17,7 @@
         <img src="./image/banner11.png" alt="" class="fb">
     </div>
     <div id="dangnhap" style="width: 40%;">
-        <form action="${base }/login_processing_url" method="post"
+        <form action="${base }/login_processing_url?loginPage=user" method="post"
               style="display: flex;justify-content: center;align-items: center; height: 100vh;">
             <div id="dangky" style="position: relative;">
                 <img src="./image/logoOff.png" alt="" class="logo-center">

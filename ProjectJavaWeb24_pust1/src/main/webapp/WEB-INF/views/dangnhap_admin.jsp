@@ -17,7 +17,7 @@
 <%--        <img src="./image/banner11.png" alt="" class="fb">--%>
 <%--    </div>--%>
     <div id="dangnhap-admin"  style="width: 100%;">
-        <form action="${base }/login_processing_url" method="post" id="form-login"
+        <form action="${base }/login_processing_url?loginPage=admin" method="post" id="form-login"
               style="display: flex;justify-content: center;align-items: center; height: 100vh;">
             <div id="dangky" style="position: relative;">
                 <img src="./image/logoOff.png" alt="" class="logo-center-admin">
@@ -42,7 +42,9 @@
 
                 <c:if test="${not empty param.login_error}">
                     <div class="alert alert-danger" role="alert">
-                        Tên đăng nhập hoặc mật khẩu không chính xác!
+                        <!-- Tên đăng nhập hoặc mật khẩu không chính xác! -->
+                        <%= "1".equals(request.getParameter("message")) ? "Tên đăng nhập không chính xác!" : ""%>
+                        <%= "2".equals(request.getParameter("message")) ? "Mật khẩu không chính xác!" : ""%>
                     </div>
                 </c:if>
 

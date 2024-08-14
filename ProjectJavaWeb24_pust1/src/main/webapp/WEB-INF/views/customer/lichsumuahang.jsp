@@ -28,27 +28,38 @@
             <tr>
                 <th>Mã HĐ</th>
                 <th>Tên khách hàng</th>
-                <th>Ngày mua</th>
-                <th>Số lượng</th>
+                <th>Phương thức thanh toán</th>
+                <th>Trạng thái thanh toán</th>
+                <th>Tổng số lượng</th>
                 <th>Thành tiền</th>
                 <th>Trạng thái</th>
                 <th></th>
             </tr>
             
             <c:if test="${hoaDons.data != null }">
-            <p>Hello</p>
-            	<c:forEach items="${hoaDons.data }" var="hd">
-            		<tr>
-	                <td>HĐ${hd.id }</td>
-	                <td>${hd.khachHang.hoTen }</td>
-	                <td>${hd.createdDate }</td>
-	                <td>${hd.tongSoLuong }</td>
-	                <td>${hd.getThanhTienFM() }đ</td>
-	                <td>Đang xử lý</td>
-	                <td>
-	                    <input type="button" value="Chi tiết" onclick="ChiTietHoaDon(${hd.id})">
-	                </td>
-           		 </tr>
+            
+            	<c:forEach items="${hoaDons.data }" var="hoaDon">
+	            	<tr>
+		                <td>HĐ0${hoaDon.id }</td>
+		                <td>${hoaDon.khachHang.hoTen }</td>
+		                <td> 
+		                    	<c:if test="${hoaDon.paymentMethod == null || hoaDon.paymentMethod == 2 }">ATM</c:if>
+		                    	<c:if test="${hoaDon.paymentMethod != null && hoaDon.paymentMethod == 1 }">COD</c:if>
+		                </td>
+		                <td>
+		                		<c:if test="${hoaDon.paymentStatus == 1 }"><span style="color: red;">&#8226; Chưa thanh toán</span></c:if>
+		                		<c:if test="${hoaDon.paymentStatus == 2 }"><span style="color: green">&#8226; Đã thanh toán</span></c:if>
+		                		<c:if test="${hoaDon.paymentStatus == 3 }"><span style="color: purple;">&#8226; Đã hoàn tiền</span></c:if>
+		                		<c:if test="${hoaDon.paymentStatus == 4 }"><span style="">&#8226; Đã hủy bỏ</span></c:if>
+		                	
+		                	</td>
+		                <td>${hoaDon.tongSoLuong }</td>
+		                <td>${hoaDon.getThanhTienFM() }đ</td>
+		                <td>${hoaDon.statusString }</td>
+		                <td>
+		                    <input type="button" onclick="ChiTietHoaDon('${hoaDon.id}')" value="Chi tiết">
+		                </td>
+	                </tr>
             	</c:forEach>
             </c:if>
             <%-- <c:forEach items="${khachHangs }" var="kh">

@@ -26,20 +26,18 @@ public class SecurConfig extends WebSecurityConfigurerAdapter{
 		
 		//các request kiểu: "/admin/" phải xác thực rồi(đã login) mới được vào (authenticated)
 		.antMatchers("/admin/**").hasAnyAuthority("ADMIN")
-		
-		
 		.and()
 		
 		//nếu chưa xác thực thì hiển thị trang login
 		// /login: một request trong LoginController
-				.formLogin().loginPage("/admin/login")
-				.loginProcessingUrl("/login_processing_url")
+		.formLogin().loginPage("/admin/login")
+		.loginProcessingUrl("/login_processing_url")
+		.failureHandler(new CustomAuthenticationFailureHandler())
 		.successHandler(new UrlAuthenticationSuccessHandler())
 //		.defaultSuccessUrl("/trang-chu", true) // login thành công thì luôn trở về trang người dùng
-		.failureUrl("/admin/login?login_error=true")
+		//.failureUrl("/admin/login?login_error=true")
 		
 		.and()
-		
 		//cấu hình cho phần logout
 		.logout().logoutUrl("/logout").logoutSuccessUrl("/trang-chu").invalidateHttpSession(true)
 		.deleteCookies("JSESSIONID")
