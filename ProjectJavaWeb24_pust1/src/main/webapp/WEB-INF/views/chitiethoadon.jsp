@@ -27,6 +27,11 @@
     			<input type="button" value="Hủy đơn hàng" onclick="ChangeBillStatus('${hoaDon.id }', '-1')"></input>
     		</div>
     	</c:if>
+    	<c:if test="${isUser != null && !isUser && (hoaDon.status == null || hoaDon.status == 1 || hoaDon.status == 2) }">
+		    <div style="float: right;">
+		    	<input type="button" value="Hủy đơn hàng" onclick="ChangeBillStatusUser('${hoaDon.id }', '-1')"></input>
+		    </div>
+		</c:if>
     	<div style="clear: both;"></div>
         <h1>CHI TIẾT HÓA ĐƠN</h1>
         <div class="thongtinhoadon">
@@ -42,9 +47,17 @@
                 <tr>
                     <td>Địa chỉ nhận hàng: ${hoaDon.khachHang.diaChi }</td>
                     <td>Hình thức thanh toán: 
-                    	<c:if test="${hoaDon.paymentMethod == null || hoaDon.paymentMethod == 2 }">Thanh toán khi nhận hàng</c:if>
-                    	<c:if test="${hoaDon.paymentMethod != null && hoaDon.paymentMethod == 1 }">Đã thanh toán qua Paypal</c:if>
+                    	<c:if test="${hoaDon.paymentMethod == null || hoaDon.paymentMethod == 2 }">ATM</c:if>
+                    	<c:if test="${hoaDon.paymentMethod != null && hoaDon.paymentMethod == 1 }">COD</c:if>
                     </td>
+                </tr>
+                <tr>
+                	<td>Trạng thái thanh toán: 
+                		<c:if test="${hoaDon.paymentStatus == 1 }">Chưa thanh toán</c:if>
+                		<c:if test="${hoaDon.paymentStatus == 2 }">Đã thanh toán</c:if>
+                		<c:if test="${hoaDon.paymentStatus == 3 }">Đã hoàn tiền</c:if>
+                		<c:if test="${hoaDon.paymentStatus == 4 }">Đã hủy bỏ</c:if>
+                	</td>
                 </tr>
                 <tr>
                 	<td colspan="2">Trạng thái: ${status }</td>
@@ -110,6 +123,11 @@
 	function ChangeBillStatus(id, status) {
 		console.log("id: " + id + " status: " + status);
 		window.location = "/admin/bill/chang-status?idhd=" + id + "&status=" + status;
+	}
+	
+	function ChangeBillStatusUser(id, status) {
+		console.log("id: " + id + " status: " + status);
+		window.location = "/bill/chang-status?idhd=" + id + "&status=" + status;
 	}
 </script>
 

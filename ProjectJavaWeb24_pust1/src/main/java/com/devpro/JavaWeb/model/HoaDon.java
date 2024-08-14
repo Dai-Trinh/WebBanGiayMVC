@@ -44,6 +44,9 @@ public class HoaDon extends BaseEntity{
 	@Column(name = "payment_method")
 	private Integer paymentMethod;
 	
+	@Column(name = "payment_status")
+	private Integer paymentStatus;
+	
 	@Transient
 	private String statusString;
 
@@ -107,6 +110,15 @@ public class HoaDon extends BaseEntity{
 	public void setStatusString(String statusString) {
 		this.statusString = statusString;
 	}
+
+	public Integer getPaymentStatus() {
+		return paymentStatus;
+	}
+
+	public void setPaymentStatus(Integer paymentStatus) {
+		this.paymentStatus = paymentStatus;
+	}
+	
 	
 	
 }

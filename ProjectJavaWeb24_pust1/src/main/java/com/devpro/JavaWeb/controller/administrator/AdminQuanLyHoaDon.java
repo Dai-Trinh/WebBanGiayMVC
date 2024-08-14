@@ -1,7 +1,6 @@
 package com.devpro.JavaWeb.controller.administrator;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -34,6 +34,15 @@ public class AdminQuanLyHoaDon extends BaseController{
 	throws IOException {
 		
 		hoaDonSearch.setTenKhachHang(request.getParameter("tenkhachhang"));
+		if(StringUtils.hasText(request.getParameter("paymentMetod"))) {
+			hoaDonSearch.setPaymentMethod(Integer.parseInt(request.getParameter("paymentMetod")));
+		}
+		if(StringUtils.hasText(request.getParameter("paymentStatus"))) {
+			hoaDonSearch.setPaymentStatus(Integer.parseInt(request.getParameter("paymentStatus")));
+		}
+		if(StringUtils.hasText(request.getParameter("status"))) {
+			hoaDonSearch.setStatus(Integer.parseInt(request.getParameter("status")));
+		}
 		hoaDonSearch.setSizeOfPage(6);
 		hoaDonSearch.setPage(1);
 		
@@ -41,7 +50,9 @@ public class AdminQuanLyHoaDon extends BaseController{
 		for(HoaDon hoaDon : hoaDons.getData()) {
 			hoaDon.setStatusString(Utils.convertStatus(hoaDon.getStatus()));
 		}
+		model.addAttribute("hoaDonSearch", hoaDonSearch);
 		model.addAttribute("hoaDons", hoaDons);
+		model.addAttribute("hoaDonSearchPaymentMethod", hoaDonSearch.getPaymentMethod());
 		return "administrator/quanlyhoadon";
 	}
 	
@@ -52,8 +63,13 @@ public class AdminQuanLyHoaDon extends BaseController{
 	throws IOException {
 		
 		hoaDonSearch.setPage(Integer.parseInt(request.getParameter("sotrang")));
-		
-		model.addAttribute("hoaDons", hoaDonService.searchHoaDon(hoaDonSearch));
+		model.addAttribute("hoaDonSearch", hoaDonSearch);
+		model.addAttribute("hoaDonSearchPaymentMethod", hoaDonSearch.getPaymentMethod());
+		PagerData<HoaDon> hoaDons = hoaDonService.searchHoaDon(hoaDonSearch);
+		for(HoaDon hoaDon : hoaDons.getData()) {
+			hoaDon.setStatusString(Utils.convertStatus(hoaDon.getStatus()));
+		}
+		model.addAttribute("hoaDons", hoaDons);
 		return "administrator/quanlyhoadon";
 	}
 }

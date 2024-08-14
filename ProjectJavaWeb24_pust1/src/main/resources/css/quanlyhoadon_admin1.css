@@ -46,6 +46,11 @@ td, th {
     width: 250px;
 }
 
+.tim-kien-hoa-don .select-timkiem {
+	height: 30px;
+	padding-left: 10px;
+}
+
 .phantrang {
     width: 100%;
     justify-content: center;
