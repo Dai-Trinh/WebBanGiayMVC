@@ -25,5 +25,12 @@ public class Utils {
 			return "";
 		}
 	}
+	
+	public interface PaymentMethodType {
+		int NOT_PAY = 1;
+		int PAY = 2;
+		int REFUNDED = 3;
+		int CANCELED = 4;
+	}
 
 }

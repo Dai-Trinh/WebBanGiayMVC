@@ -40,6 +40,13 @@ public class AdminChiTietHoaDon {
 		Integer status = Integer.parseInt(request.getParameter("status"));
 		HoaDon hoaDon = hoaDonService.getById(id);
 		hoaDon.setStatus(status);
+		if(status == -1 || status == -2) {
+			if(hoaDon.getPaymentMethod() == Utils.PaymentMethodType.NOT_PAY) {
+				hoaDon.setPaymentMethod(Utils.PaymentMethodType.CANCELED);
+			} else if (hoaDon.getPaymentMethod() == Utils.PaymentMethodType.PAY) {
+				hoaDon.setPaymentMethod(Utils.PaymentMethodType.REFUNDED);
+			}
+		}
 		hoaDonService.saveOrUpdate(hoaDon);
 		return "redirect:/admin/chi-tiet-hoa-don?idhd=" + id;
 	}

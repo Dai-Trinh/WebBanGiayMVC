@@ -34,6 +34,7 @@ import com.devpro.JavaWeb.services.impl.ChiTietHoaDonService;
 import com.devpro.JavaWeb.services.impl.HoaDonService;
 import com.devpro.JavaWeb.services.impl.KhachHangService;
 import com.devpro.JavaWeb.services.impl.SanPhamService;
+import com.devpro.JavaWeb.services.utils.Utils;
 
 @Controller
 public class CartController extends BaseController{
@@ -269,6 +270,11 @@ public class CartController extends BaseController{
 		hoaDon.setTongSoLuong(cart.getTotalProducts());
 		hoaDon.setThanhTien(cart.getTotalPrice());
 		hoaDon.setPaymentMethod((Integer) session.getAttribute("loaiThanhToan"));
+		if(hoaDon.getPaymentMethod() == 1) {
+			hoaDon.setPaymentStatus(Utils.PaymentMethodType.PAY);
+		} else if(hoaDon.getPaymentMethod() == 2){
+			hoaDon.setPaymentStatus(Utils.PaymentMethodType.NOT_PAY);
+		}
 		hoaDon.setStatus(1);
 		HoaDon hoaDonUpdate = hoaDonService.saveOrUpdate(hoaDon);
 		
