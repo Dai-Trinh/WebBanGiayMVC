@@ -27,7 +27,7 @@
    <h1>${title }</h1>
    <div id="upanh">
     <p><img src="${base }/image/${sanPham.hinhAnh}" alt="" class="hienthianh"></p>
-    <c:if test="${isRead }">
+    <c:if test="${!isRead }">
     	<p><input type="file" name="anhSanPham" id="" class="chonanh"></p>
     </c:if>
    </div>

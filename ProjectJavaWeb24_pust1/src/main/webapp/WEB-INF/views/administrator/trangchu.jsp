@@ -21,7 +21,7 @@
             <form action="${base }/admin/trang-chu" method="get">
             	<div id="content-right">
                 <div class="content-right-top">
-                    <div class="right-top-left">
+                    <div class="right-top-left d-flex">
                     	
                         <input type="text" placeholder="Tìm kiếm tên...." name="timkiemten" class="timkiemten" value="${sanPhamSearch.keyword }">
                         
@@ -43,23 +43,25 @@
                         <input type="text" placeholder="Nhập giá..." name="mingia" class="timkiemten" value="${sanPhamSearch.minPrice }">
                         đến:
                         <input type="text" placeholder="Nhập giá...." name="maxgia" class="timkiemten" value="${sanPhamSearch.maxPrice }">
+                    </div>
+                    <div class="right-top-left d-flex">
                         Phiên bản:
                         <input type="text" placeholder="Tìm kiếm tên...." name="timkiemphienban" class="timkiemten" value="${sanPhamSearch.phienBan }">
                         Trạng thái:
                         <select name="timkiemtrangthai" id="searchiiddanhmuc">
                             <option value="0" selected>Tất cả</option>
-                       		<c:if test="${sanPhamSearch.statusSearch == 1 }">
-                       			<option value="1" selected="selected">Đang bán</option>
-                       		</c:if>
+                            <c:if test="${sanPhamSearch.statusSearch == 1 }">
+                                <option value="1" selected="selected">Đang bán</option>
+                            </c:if>
                             <c:if test="${sanPhamSearch.statusSearch != 1 }">
-                       			<option value="1">Đang bán</option>
-                       		</c:if>
+                                <option value="1">Đang bán</option>
+                            </c:if>
                             <c:if test="${sanPhamSearch.statusSearch == -1 }">
-                       			<option value="-1" selected="selected">Ngừng bán</option>
-                       		</c:if>
+                                <option value="-1" selected="selected">Ngừng bán</option>
+                            </c:if>
                             <c:if test="${sanPhamSearch.statusSearch != -1 }">
-                       			<option value="-1">Ngừng bán</option>
-                       		</c:if>
+                                <option value="-1">Ngừng bán</option>
+                            </c:if>
                         </select>
                         <input type="submit" value="Tìm kiếm" class="timkiem" id="timkiem"/>
                     </div>
@@ -278,6 +280,26 @@
 	});
 	
 	
+</script>
+
+<%--man trang chu admin, menu--%>
+<script type="text/javascript">
+    function dangKyAdmin() {
+        document.getElementById('form-dang-ky-admin').submit();
+    }
+</script>
+<script>
+    const showMockupBtn = document.getElementById('showMockupBtn');
+    const mockup = document.getElementById('mockup');
+    const closeMockupBtn = document.getElementById('closeMockupBtn');
+
+    showMockupBtn.addEventListener('click', () => {
+        mockup.style.display = 'flex';
+    });
+
+    closeMockupBtn.addEventListener('click', () => {
+        mockup.style.display = 'none';
+    });
 </script>
 
 </html>

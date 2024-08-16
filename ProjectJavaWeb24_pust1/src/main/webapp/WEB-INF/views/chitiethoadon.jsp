@@ -10,7 +10,7 @@
     <jsp:include page="/WEB-INF/views/common/variables.jsp"></jsp:include>
     <link rel="stylesheet" href="${base }/css/chitiethoadon.css">
     <link rel="stylesheet" href="${base }/css/menu.css">
-    <link rel="stylesheet" href="${base }/css/header1.css">
+<%--    <link rel="stylesheet" href="${base }/css/header1.css">--%>
     <title>Document</title>
 </head>
 <body>
