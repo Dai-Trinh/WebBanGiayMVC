@@ -13,15 +13,52 @@
     <link rel="stylesheet" href="${base }/css/footer1.css">
     <link rel="stylesheet" href="${base }/icon/themify-icons/themify-icons.css">
     <link type="text/css" rel="stylesheet" href="${base}/css/simplePagination.css"/>
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css" integrity="sha512-B46MVOJpI6RBsdcU307elYeStF2JKT87SsHZfRSkjVi4/iZ3912zXi45X5/CBr/GbCyLx6M1GQtTKYRd52Jxgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tìm kiếm sản phẩm</title>
 </head>
 <body>
     <div id="body-search">
         <div class="tim-kiem">
-            <form action="${base }/tim-kiem-san-pham" method="get" id="form-tim-kiem-1">
-                <input type="search" placeholder="Nhập tên sản phẩm" value="${tenSp }" name="tensanpham" class="ten-san-pham" >
-                
-                <i class="ti-search" onclick="timKiem()"></i>
+            <form action="${base }/tim-kiem-san-pham" method="get" id="form-tim-kiem-1" style="padding: 20px;">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon">Tên sản phẩm</span>
+                    <input type="search" class="form-control"  placeholder="Nhập tên sản phẩm" value="${tenSp }" name="tensanpham" class="ten-san-pham"
+                           aria-label="Username" aria-describedby="basic-addon">
+                </div>
+                <div class="d-flex">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon0">Loại danh mục</span>
+                        <select name="timkiemloaisp" id="searchiiddanhmuc">
+                            <option value="0" selected>Tất cả</option>
+                            <c:forEach items="${danhMucSanPhamBac2 }" var="b2">
+
+                                <c:if test="${b2.id == sanPhamSearch.danhMucId }">
+                                    <option value="${b2.id }" selected>${b2.tenDanhMuc }</option>
+                                </c:if>
+                                <c:if test="${b2.id != sanPhamSearch.danhMucId }">
+                                    <option value="${b2.id }">${b2.tenDanhMuc }</option>
+                                </c:if>
+
+                            </c:forEach>
+
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Giá: (Từ)</span>
+                        <input type="text" class="form-control" placeholder="Nhập giá..." name="mingia" class="timkiemten" value="${sanPhamSearch.minPrice }"
+                               aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">(Đến)</span>
+                        <input type="text" class="form-control" placeholder="Nhập giá...." name="maxgia" class="timkiemten" value="${sanPhamSearch.maxPrice }"
+                               aria-label="Username" aria-describedby="basic-addon2">
+                    </div>
+                </div>
+                <div class="d-flex" style="justify-content: center;">
+                    <i class="ti-search ti-search-filter" onclick="timKiem()"></i>
+                </div>
             </form>
         </div>
 

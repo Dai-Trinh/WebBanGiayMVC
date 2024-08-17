@@ -83,7 +83,7 @@ hr {
     display: none;
     
     width: 150px;
-    left: 195px;
+    left: 180px;
     top: 0;
     background-color: white;
     padding: 0 15px;
@@ -94,7 +94,7 @@ hr {
 }
 
 .menucap2 > li > a {
-    font-weight: 500;
+    font-weight: lighter;
 }
 
 .menucon1 ul

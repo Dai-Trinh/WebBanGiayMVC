@@ -41,7 +41,7 @@ public class SanPhamAoController extends BaseController {
 		
 		sanPhamSearch.setStatus(1+"");
 		sanPhamSearch.setPage(1);
-		if(danhMucSanPhamBac2.getId()!=null){
+		if(danhMucSanPhamBac2 != null && danhMucSanPhamBac2.getId()!=null){
 			sanPhamSearch.setDanhMucId(danhMucSanPhamBac2.getId()+"");
 		}
 		sanPhamSearch.setSizeOfPage(12);

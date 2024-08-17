@@ -75,7 +75,7 @@
 				id="form-tim-kiem">
 				<p style="margin: 0; width: 100%;">
 					<input type="search" placeholder="Tìm kiếm..." name="tensanpham"
-						class="ten-san-pham" style="height: 29px; width: 75%;"> <i
+						class="ten-san-pham" style="height: 28px; width: 75%;"> <i
 						class="ti-search" onclick="timKiemMenu()"></i>
 				</p>
 			</form>
